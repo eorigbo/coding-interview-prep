@@ -11,28 +11,24 @@ public class MergeSortedArrays {
         int currentIndexSecond = 0;
         int currentIndexMerged = 0;
 
-        while (currentIndexMerged < mergedArray.length){
-
-            boolean isFirstArrayExhausted = currentIndexFirst >= firstArray.length;
-            boolean isSecondArrayExhausted = currentIndexSecond >= secondArray.length;
-
-            /*
-            add firstArray element to mergedArray AND
-            increment currentIndexFirst if
+        /*add firstArray element to mergedArray IF
             first array is not exhausted AND
             second array is exhausted OR
             currentIndexFirst < currentIndexSecond
-            */
-            if (!isFirstArrayExhausted && (isSecondArrayExhausted || firstArray[currentIndexFirst] < secondArray[currentIndexSecond])){
-                mergedArray[currentIndexMerged] = firstArray[currentIndexFirst];
+        */
+
+        for (int i = 0; i < mergedArray.length; i++){
+
+            boolean isFirstExhausted = currentIndexFirst >= firstArray.length;
+            boolean isSecondExhausted = currentIndexSecond >= secondArray.length;
+
+            if(!isFirstExhausted && (isSecondExhausted || firstArray[currentIndexFirst] < secondArray[currentIndexSecond])){
+                mergedArray[i] = firstArray[currentIndexFirst];
                 currentIndexFirst++;
             }else{
-                mergedArray[currentIndexMerged] = secondArray[currentIndexSecond];
+                mergedArray[i] = secondArray[currentIndexSecond];
                 currentIndexSecond++;
             }
-
-
-            currentIndexMerged++;
         }
 
         return mergedArray;

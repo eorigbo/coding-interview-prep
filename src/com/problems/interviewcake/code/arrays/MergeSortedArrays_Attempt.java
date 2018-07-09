@@ -18,22 +18,19 @@ public class MergeSortedArrays_Attempt{
 
         int currentIndexFirst = 0;
         int currentIndexSecond = 0;
-        int currentIndexMerged = 0;
 
-        while(currentIndexMerged < mergedArray.length){
+        for (int i = 0; i < mergedArray.length; i++){
 
             boolean isFirstExhausted = currentIndexFirst >= firstArray.length;
             boolean isSecondExhausted = currentIndexSecond >= secondArray.length;
 
             if(!isFirstExhausted && (isSecondExhausted || firstArray[currentIndexFirst] < secondArray[currentIndexSecond])){
-                mergedArray[currentIndexMerged] = firstArray[currentIndexFirst];
+                mergedArray[i] = firstArray[currentIndexFirst];
                 currentIndexFirst++;
             }else{
-                mergedArray[currentIndexMerged] = secondArray[currentIndexSecond];
+                mergedArray[i] = secondArray[currentIndexSecond];
                 currentIndexSecond++;
             }
-            currentIndexMerged++;
-
         }
 
         return mergedArray;
