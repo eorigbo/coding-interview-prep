@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.CheckSingleRiffle.isSingleRiffle;
+import static com.problems.interviewcake.code.arrays.CheckSingleRiffle_Attempt.isSingleRiffle;
 
 public class CheckSingleRiffleTest {
 
