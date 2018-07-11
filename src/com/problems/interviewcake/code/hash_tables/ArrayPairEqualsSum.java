@@ -9,12 +9,12 @@ public class ArrayPairEqualsSum {
 
         Set<Integer> arrayNumbersSeen = new HashSet<>();
 
-        for (int firstArrayNum: arrayNumbers){
-            int matchingSecondNum = sumArrayPair - firstArrayNum;
+        for (int currArrayNum: arrayNumbers){
+            int matchingSecondNum = sumArrayPair - currArrayNum;
             if(arrayNumbersSeen.contains(matchingSecondNum)){
                 return true;
             }
-            arrayNumbersSeen.add(firstArrayNum);
+            arrayNumbersSeen.add(currArrayNum);
         }
 
         return false;
