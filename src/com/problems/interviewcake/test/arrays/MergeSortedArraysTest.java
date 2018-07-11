@@ -8,7 +8,7 @@ import static com.problems.interviewcake.code.arrays.MergeSortedArrays_Attempt.m
 public class MergeSortedArraysTest {
 
     @Test
-    public void mergeArraysTest(){
+    public void mergeArraysSizeTest(){
         int[] firstArray = new int[]{3,4,6,10,11,15};
         int[] secondArray = new int[]{1,5,8,12,14,19};
 
@@ -21,7 +21,7 @@ public class MergeSortedArraysTest {
     }
 
     @Test
-    public void mergeArraysTestFirst(){
+    public void mergeArraysFirstElementTest(){
         int[] firstArray = new int[]{3,4,6,10,11,15};
         int[] secondArray = new int[]{1,5,8,12,14,19};
 
@@ -34,7 +34,7 @@ public class MergeSortedArraysTest {
     }
 
     @Test
-    public void mergeArraysTestLast(){
+    public void mergeArraysLastElementTest(){
         int[] firstArray = new int[]{3,4,6,10,11,15};
         int[] secondArray = new int[]{1,5,8,12,14,19};
 

@@ -9,12 +9,10 @@ public class MergeSortedArrays {
 
         int currentIndexFirst = 0;
         int currentIndexSecond = 0;
-        int currentIndexMerged = 0;
 
         /*add firstArray element to mergedArray IF
             first array is not exhausted AND
-            second array is exhausted OR
-            currentIndexFirst < currentIndexSecond
+            second array is exhausted OR currentIndexFirst < currentIndexSecond
         */
 
         for (int i = 0; i < mergedArray.length; i++){
