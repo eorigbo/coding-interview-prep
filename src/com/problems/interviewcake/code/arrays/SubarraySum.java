@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.hash_tables;
+package com.problems.interviewcake.code.arrays;
 
 public class SubarraySum
 {

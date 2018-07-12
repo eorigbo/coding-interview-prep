@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.hash_tables;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.hash_tables.ArrayPairEqualsSum.arrayPairEqualsSum;
+import static com.problems.interviewcake.code.hash_tables.ArrayPairEqualsSum_Attempt.arrayPairEqualsSum;
 
 public class ArrayPairEqualsSumTest {
 
