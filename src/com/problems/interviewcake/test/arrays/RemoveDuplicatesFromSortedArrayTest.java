@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.RemoveDuplicatesFromSortedArray.removeDuplicates;
+import static com.problems.interviewcake.code.arrays.RemoveDuplicatesFromSortedArray_Attempt.removeDuplicates;
 
 public class RemoveDuplicatesFromSortedArrayTest {
 

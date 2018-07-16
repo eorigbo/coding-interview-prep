@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.hash_tables;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.hash_tables.SortScores.sortScores;
+import static com.problems.interviewcake.code.hash_tables.SortScores_Attempt.sortScores;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SortScoresTest {
