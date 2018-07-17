@@ -2,11 +2,11 @@ package com.problems.interviewcake.test.greedy;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.greedy.SellStockOnce.getMaxProfit;
+import static com.problems.interviewcake.code.greedy.SellStockOnce_Attempt.getMaxProfit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class SellStockOnce {
+public class SellStockOnceTest {
 
     @Test
     public void priceGoesUpThenDownTest() {
