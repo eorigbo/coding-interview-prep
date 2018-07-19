@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.greedy;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.greedy.HighestProduct3Ints.highestProduct3Ints;
+import static com.problems.interviewcake.code.greedy.HighestProduct3Ints_Attempt.highestProduct3Ints;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

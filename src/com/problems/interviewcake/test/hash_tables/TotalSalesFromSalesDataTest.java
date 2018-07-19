@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.hash_tables;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.hash_tables.TotalSalesFromSalesData.totalSalesFromSalesData;
+import static com.problems.interviewcake.code.hash_tables.TotalSalesFromSalesData_Attempt.totalSalesFromSalesData;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class TotalSalesFromSalesDataTest {
