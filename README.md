@@ -4,7 +4,7 @@ This repository contains code I created as part of my journey to get better at a
 My plan is to update this read me doc with the topics I've covered, and questions under those topics. 
 
 ----------------------------
-### Arrays
+### 1. Arrays
 Solutions to array questions can be found in the package com.problems.interviewcake.code.arrays. Test cases can be found in the package com.problems.interviewcake.test.arrays. Test cases share the same name as the solution files, with Test added at the end. Array questions in my repo include:
 
 **1\. Merging Meeting Times:** Write a function for merging meeting times given everyone's schedules.
@@ -36,7 +36,7 @@ Solutions to array questions can be found in the package com.problems.interviewc
 - Solution File Name: SubarraySum
 
 ----------------------------
-### Hash Tables
+### 2. Hash Tables
 Solutions to hash table questions can be found in the package com.problems.interviewcake.code.hash_tables. Test cases can be found in the package com.problems.interviewcake.test.hash_tables. Test cases share the same name as the solution files, with Test added at the end. Hash table questions in my repo include:
 
 **1\. Array Pair Equals Sum:** Write a function that determines if an array has a pair of elements whose sum equals a given number.
@@ -56,7 +56,7 @@ Solutions to hash table questions can be found in the package com.problems.inter
 - Solution File Name: TotalSalesFromSalesData
 
 ----------------------------
-### Greedy Algorithms
+### 3. Greedy Algorithms
 Solutions to greedy algorithm questions can be found in the package com.problems.interviewcake.code.greedy. Test cases can be found in the package com.problems.interviewcake.test.greedy. Test cases share the same name as the solution files, with Test added at the end. Greedy algorithm questions in my repo include:
 
 **1\. Sell Stocks Once:** Write a function that determines the optimal buy and sell time for a given stock, given its prices yesterday.
