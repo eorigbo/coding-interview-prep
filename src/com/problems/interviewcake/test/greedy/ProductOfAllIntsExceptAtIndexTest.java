@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.greedy;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.greedy.ProductOfAllIntsExceptAtIndex.getProducts;
+import static com.problems.interviewcake.code.greedy.ProductOfAllIntsExceptAtIndex_Attempt.getProducts;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
