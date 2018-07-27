@@ -2,27 +2,20 @@ package com.problems.interviewcake.code.greedy;
 
 public class SellStockOnce_Attempt {
 
-    public static int getMaxProfit(int[] stockPrices){
-
-        //throw exception if arrayLength < 2
-        if(stockPrices.length < 2){
-            throw new IllegalArgumentException("Get a profit requires at least 2 stock prices.");
+    public static int getMaxProfit(int[] theArray){
+        if(theArray.length < 2){
+            throw new IllegalArgumentException("We need at least 2 prices to trade.");
         }
-
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = Integer.MIN_VALUE;
+        int potentialProfit;
 
-        //loop through stockPrices and calculate max profit as max of potential profit and max profit
-        for(int currPrice: stockPrices){
-            int potentialProfit = currPrice - minPrice;
-            maxProfit = Math.max(potentialProfit,maxProfit);
-            minPrice = Math.min(currPrice,minPrice);
+        for(int currPrice: theArray){
+            potentialProfit = currPrice - minPrice;
+            maxProfit = Math.max(maxProfit,potentialProfit);
+            minPrice = Math.min(minPrice, currPrice);
         }
-
-
-        //return maxProfit outside loop
         return maxProfit;
-
     }
 
 }

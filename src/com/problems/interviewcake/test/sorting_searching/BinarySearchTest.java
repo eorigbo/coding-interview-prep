@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.sorting_searching;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.sorting_searching.BinarySearch.binarySearch;
+import static com.problems.interviewcake.code.sorting_searching.BinarySearch_Attempt.binarySearch;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BinarySearchTest {

@@ -5,21 +5,20 @@ import java.util.Set;
 
 public class ArrayPairEqualsSum_Attempt {
 
+    public static boolean arrayPairEqualsSum(int[] theArray, int theSum){
 
-    public static boolean arrayPairEqualsSum(int[] arrayNumbers, int arraySum){
-        Set<Integer> numbersSeen = new HashSet<>();
+        Set<Integer> matchingNumbers = new HashSet<>();
 
-        for(int currentNumber: arrayNumbers){
-            int matchingSecondNumber = arraySum - currentNumber;
-
-            if(numbersSeen.contains(matchingSecondNumber)){
+        for(int currInt: theArray){
+            int secondNumber = theSum - currInt;
+            if(matchingNumbers.contains(secondNumber)){
                 return true;
+            }else{
+                matchingNumbers.add(currInt);
             }
-
-            numbersSeen.add(currentNumber);
         }
         return false;
-
     }
+
 
 }
