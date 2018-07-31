@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.trees_graphs;
 import com.problems.interviewcake.code.trees_graphs.BinaryTreeNode;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.trees_graphs.BinaryTreeIsSuperBalanced.isBalanced;
+import static com.problems.interviewcake.code.trees_graphs.BinaryTreeIsSuperBalanced_Attempt.isBalanced;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

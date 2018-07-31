@@ -8,19 +8,18 @@ public class SubarraySum_Attempt{
         int start = 0;
 
         for(int i = 1; i <= theArray.length; i++){
+
             while(currSum > theSum && start < i-1){
                 currSum = currSum - theArray[start];
                 start++;
             }
 
             if(currSum == theSum){
-                int lastSubarrayIndex = i - 1;
+                int subarrayLastIndex = i - 1;
                 return true;
             }
 
-            if(i < theArray.length){
-                currSum = currSum + theArray[i];
-            }
+            if(i < theArray.length) currSum = currSum + theArray[i];
         }
         return false;
     }
