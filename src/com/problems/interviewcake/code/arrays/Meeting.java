@@ -25,4 +25,17 @@ public class Meeting{
     public void setEndTime(int endTime){
         this.endTime = endTime;
     }
-}
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Meeting)) {
+            return false;
+        }
+        final Meeting meeting = (Meeting) o;
+        return startTime == meeting.startTime && endTime == meeting.endTime;
+    }
+
+ }

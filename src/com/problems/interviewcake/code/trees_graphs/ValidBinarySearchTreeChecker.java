@@ -18,6 +18,7 @@ public class ValidBinarySearchTreeChecker {
     }
 
     public static boolean isBinarySearchTree(BinaryTreeNode root){
+        if(root == null)return true;
 
         Deque<NodeBounds> nodeBounds = new ArrayDeque<>();
         nodeBounds.push(new NodeBounds(root,Integer.MIN_VALUE,Integer.MAX_VALUE));

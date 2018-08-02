@@ -1,0 +1,28 @@
+package com.problems.interviewcake.code.trees_graphs;
+
+public class SecondLargestItemBinarySearchTree {
+    private static int findLargest(BinaryTreeNode rootNode){
+        BinaryTreeNode current = rootNode;
+        while(current.right!=null){
+            current = current.right;
+        }
+        return current.value;
+    }
+
+    public static int findSecondLargest(BinaryTreeNode rootNode){
+        if(rootNode == null || (rootNode.left == null
+                && rootNode.right == null)) {
+            throw new IllegalArgumentException("Tree must have at least 2 nodes");
+        }
+
+        BinaryTreeNode current = rootNode;
+
+        while(true){
+            if(current.left != null && current.right == null) return findLargest(current.left);
+            if(current.right != null && current.right.left == null
+                    && current.right.right == null) return current.value;
+            current = current.right;
+
+        }
+    }
+}

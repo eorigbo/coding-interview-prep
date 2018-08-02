@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.trees_graphs;
 import com.problems.interviewcake.code.trees_graphs.BinaryTreeNode;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.trees_graphs.ValidBinarySearchTreeCheckerRecursive.isBinarySearchTree;
+import static com.problems.interviewcake.code.trees_graphs.ValidBinarySearchTreeChecker_Attempt.isBinarySearchTree;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -54,6 +54,13 @@ public class ValidBinarySearchTreeCheckerTest {
     @Test
     public void oneNodeTreeTest() {
         final BinaryTreeNode root = new BinaryTreeNode(50);
+        final boolean result = isBinarySearchTree(root);
+        assertTrue(result);
+    }
+
+    @Test
+    public void nullNodeTest() {
+        final BinaryTreeNode root = null;
         final boolean result = isBinarySearchTree(root);
         assertTrue(result);
     }
