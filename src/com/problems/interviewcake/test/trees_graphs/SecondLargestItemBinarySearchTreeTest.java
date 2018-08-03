@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.trees_graphs;
 import com.problems.interviewcake.code.trees_graphs.BinaryTreeNode;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.trees_graphs.SecondLargestItemBinarySearchTree.findSecondLargest;
+import static com.problems.interviewcake.code.trees_graphs.SecondLargestItemBinarySearchTree_Attempt.findSecondLargest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

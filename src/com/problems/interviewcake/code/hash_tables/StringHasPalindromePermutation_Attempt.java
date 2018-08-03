@@ -7,17 +7,21 @@ public class StringHasPalindromePermutation_Attempt{
 
     public static boolean stringHasPalindromePermutation(String theString){
 
-        Set<Character> unpairedChars = new HashSet<>();
 
-        for(char currChar: theString.toCharArray()){
-            if(unpairedChars.contains(currChar)){
-                unpairedChars.remove(currChar);
+        char[] theCharArray = theString.toCharArray();
+        if(theCharArray.length < 2) throw new IllegalArgumentException("The string needs at least 2 characters to be a palindrome.");
+
+        Set<Character> charPairs = new HashSet<>();
+
+        for(char currChar: theCharArray){
+            if(charPairs.contains(currChar)){
+                charPairs.remove(currChar);
             }else{
-                unpairedChars.add(currChar);
+                charPairs.add(currChar);
             }
-
         }
-        return unpairedChars.size() <= 1;
+        return charPairs.size() <= 1;
+
 
     }
 }
