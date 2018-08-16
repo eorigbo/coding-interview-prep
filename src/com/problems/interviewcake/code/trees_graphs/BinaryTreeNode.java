@@ -10,12 +10,12 @@ public class BinaryTreeNode {
     }
 
     public BinaryTreeNode insertLeft(int leftValue){
-        this.left = new BinaryTreeNode(leftValue);
-        return this.left;
+        left = new BinaryTreeNode(leftValue);
+        return left;
     }
 
     public BinaryTreeNode insertRight(int rightValue){
-        this.right = new BinaryTreeNode(rightValue);
-        return this.right;
+        right = new BinaryTreeNode(rightValue);
+        return right;
     }
 }

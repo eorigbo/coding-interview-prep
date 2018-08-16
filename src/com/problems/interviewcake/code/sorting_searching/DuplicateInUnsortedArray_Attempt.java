@@ -3,10 +3,11 @@ package com.problems.interviewcake.code.sorting_searching;
 public class DuplicateInUnsortedArray_Attempt {
 
     public static int findDuplicate(int[] theArray){
-        if(theArray.length < 2) throw new IllegalArgumentException("At least two integers are required in the array.");
 
         int floor = 1;
         int ceiling = theArray.length - 1;
+
+        if(theArray.length < 2) throw new IllegalArgumentException("Array length must be greater than 1 to have duplicates.");
 
         while(floor < ceiling){
             int midpoint = ((ceiling - floor)/2) + floor;
@@ -16,13 +17,13 @@ public class DuplicateInUnsortedArray_Attempt {
             int upperCeiling = ceiling;
 
             int itemsInLower = 0;
-            int DistinctIntsInLower = lowerCeiling - lowerFloor + 1;
+            int distinctLowerItems = lowerCeiling - lowerFloor + 1;
 
             for(int item: theArray){
                 if(item >= lowerFloor && item <= lowerCeiling) itemsInLower++;
             }
 
-            if(itemsInLower > DistinctIntsInLower){
+            if(itemsInLower > distinctLowerItems){
                 floor = lowerFloor;
                 ceiling = lowerCeiling;
             }else{

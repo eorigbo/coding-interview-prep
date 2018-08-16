@@ -28,12 +28,10 @@ public class Meeting{
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) {
-            return true;
-        }
-        if (!(o instanceof Meeting)) {
-            return false;
-        }
+        if (o == this) return true;
+
+        if (!(o instanceof Meeting)) return false;
+
         final Meeting meeting = (Meeting) o;
         return startTime == meeting.startTime && endTime == meeting.endTime;
     }

@@ -12,7 +12,7 @@ public class GraphNode {
 
     public GraphNode(String label){
         this.label = label;
-        neighbors = new HashSet<GraphNode>();
+        neighbors = new HashSet<>();
         color = Optional.empty();
     }
 
@@ -28,9 +28,7 @@ public class GraphNode {
         neighbors.add(neighbor);
     }
 
-    public boolean hasColor(){
-        return color.isPresent();
-    }
+    public boolean hasColor(){ return color.isPresent(); }
 
     public String getColor(){
         return color.get();

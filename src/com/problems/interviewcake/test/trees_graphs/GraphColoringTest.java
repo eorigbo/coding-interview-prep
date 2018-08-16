@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.problems.interviewcake.code.trees_graphs.GraphColoring.colorGraph;
+import static com.problems.interviewcake.code.trees_graphs.GraphColoring_Attempt.colorGraph;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
