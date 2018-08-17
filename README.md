@@ -71,7 +71,55 @@ Solutions to greedy algorithm questions can be found in the package **com.proble
 
 - Solution File Name: ProductOfAllIntsExceptAtIndex
 
-That's all for now. I plan to keep updating this page with new problems I solve, but we'll see how it goes. 
+**4\. In-Place Shuffle:** Do an in-place shuffle of an array of numbers.
+
+- Solution File Name: ShuffleArrayInPlace
+
+----------------------------
+### 4. Sorting and Searching
+Solutions to sorting and searching questions can be found in the package **com.problems.interviewcake.code.sorting_searching**. Test cases can be found in the package **com.problems.interviewcake.test.sorting_searching**. Test cases share the same name as the solution files, with Test added at the end. Searching and sorting algorithm questions in my repo include:
+
+**1\. Binary Search:** Implement binary search.
+
+- Solution File Name: BinarySearch
+
+**2\. Find Array Rotation Point:** Write a function that returns the index of the rotation point of an array of Strings.
+
+- Solution File Name: HighestProduct3Ints
+
+**3\. Find Duplicate, Space Edition:** For the lowest duplicate number in an unsorted array. Optimize for space.
+
+- Solution File Name: DuplicateInUnsortedArray
+
+----------------------------
+### 5. Trees and Graphs
+Solutions to trees and graphs questions can be found in the package **com.problems.interviewcake.code.trees_graphs**. Test cases can be found in the package **com.problems.interviewcake.test.trees_graphs**. Test cases share the same name as the solution files, with Test added at the end. Trees and graphs questions in my repo include:
+
+**1\. Super Balanced Binary Tree:** Write a function to check if a binary tree is 'super-balanced', meaning that the difference in depths between any two leaf nodes is no greater than one.
+
+- Solution File Name: BinaryTreeIsSuperBalanced
+
+**2\. Binary Search Tree Checker:** Write a function to check if a binary tree is a valid binary search tree.
+
+- Solution File Name: ValidBinarySearchTreeChecker, and ValidBinarySearchTreeRecursive
+
+**3\. 2nd Largest Item in a Binary Search Tree:** For the second largest element in a binary search tree.
+
+- Solution File Name: SecondLargestItemBinarySearchTree
+
+**4\. Graph Coloring:** Color the nodes in a graph so adjacent nodes always have different colors. Use no more than D+1 colors, where D is the maximum number of edges a node can have.
+
+- Solution File Name: GraphColoring
+
+**5\. Mesh Network:** Given information about active users on a network, find the shortest route for a message from the sender to recipient. Return an array of users that make up this route.
+
+- Solution File Name: MeshNetwork
+
+
+
+
+
+
 
 
 
