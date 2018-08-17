@@ -9,7 +9,7 @@ public class Meetings{
 
     public static List<Meeting> mergeMeetings(List<Meeting> meetings){
 
-        //make a copy of the List
+        //make a copy of the List. Let's see how this goes
         List<Meeting> sortedMeetings = new ArrayList<>();
 
         for(Meeting meeting: meetings){
