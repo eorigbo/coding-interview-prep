@@ -2,31 +2,24 @@ package com.problems.interviewcake.code.arrays;
 
 public class CheckSingleRiffle_Attempt{
 
-    public static boolean isSingleRiffle(int[] firstHalf, int[] secondHalf, int[] shuffledDeck){
+    public static boolean isSingleRiffle( int[] first, int[] second, int[] deck){
 
-        //create indexes for both halves
-        int firstHalfIndex = 0, secondHalfIndex = 0;
+        //initialize firstindex and secondindex
+        int firstIndex = 0, secondIndex = 0;
 
-        boolean isFirstExhausted, isSecondExhausted;
+        //loop through deck array
+        for(int card: deck){
+            boolean firstExhausted = firstIndex >= first.length;
+            boolean secondExhausted = secondIndex >= second.length;
 
-        for(int currentCard: shuffledDeck){
-            isFirstExhausted = firstHalfIndex >= firstHalf.length;
-            isSecondExhausted = secondHalfIndex >= secondHalf.length;
-
-            //increment first half index if first half is not exhausted and array index equal to shuffle deck index
-            if(!isFirstExhausted && firstHalf[firstHalfIndex] == currentCard){
-                firstHalfIndex++;
-                //increment second half just like first
-            }else if(!isSecondExhausted && secondHalf[secondHalfIndex] == currentCard){
-                secondHalfIndex++;
-                //else return false as the card wasn't found
+            if(!firstExhausted && first[firstIndex] == card){
+                firstIndex++;
+            }else if(!secondExhausted && second[secondIndex] == card){
+                secondIndex++;
             }else{
                 return false;
             }
-
         }
-
-        //return true at end of loop as all cards have been found
         return true;
 
     }

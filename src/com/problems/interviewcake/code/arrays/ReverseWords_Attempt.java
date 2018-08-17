@@ -13,16 +13,16 @@ public class ReverseWords_Attempt{
         }
     }
 
-    public static void reverseWords(char[] theWord){
-        if(theWord.length < 2) throw new IllegalArgumentException("At least two characters are needed to do a reverse.");
+    public static void reverseWords(char[] word){
+        //if(word.length < 2) throw new IllegalArgumentException("The word needs at least 2 characters to be reversed.");
 
-        reverseChars(theWord,0,theWord.length-1);
+        int start = 0, end = 0;
+        reverseChars(word,start,word.length - 1);
 
-        int start =0, end = 0;
-        while(start < theWord.length){
-            while(start < end || start < theWord.length && theWord[start] == ' ')start++;
-            while(end < start || end < theWord.length && theWord[end] != ' ')end++;
-            reverseChars(theWord,start,end-1);
+        while(start < word.length){
+            while(start < end || start < word.length && word[start] == ' ') start++;
+            while(end < start || end < word.length && word[end] != ' ') end++;
+            reverseChars(word,start,end-1);
         }
     }
 

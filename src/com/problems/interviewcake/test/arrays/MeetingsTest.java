@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.problems.interviewcake.code.arrays.Meetings.*;
+import static com.problems.interviewcake.code.arrays.Meetings_Attempt.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MeetingsTest {
