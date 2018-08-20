@@ -6,22 +6,16 @@ import java.util.Set;
 public class StringHasPalindromePermutation_Attempt{
 
     public static boolean stringHasPalindromePermutation(String theString){
+        if(theString.length() < 2) return true;
 
-
-        char[] theCharArray = theString.toCharArray();
-        if(theCharArray.length < 2) throw new IllegalArgumentException("The string needs at least 2 characters to be a palindrome.");
-
-        Set<Character> charPairs = new HashSet<>();
-
-        for(char currChar: theCharArray){
-            if(charPairs.contains(currChar)){
-                charPairs.remove(currChar);
+        Set<Character> oddChars = new HashSet<>();
+        for(char currChar: theString.toCharArray()){
+            if(oddChars.contains(currChar)){
+                oddChars.remove(currChar);
             }else{
-                charPairs.add(currChar);
+                oddChars.add(currChar);
             }
         }
-        return charPairs.size() <= 1;
-
-
+        return oddChars.size() <= 1;
     }
 }

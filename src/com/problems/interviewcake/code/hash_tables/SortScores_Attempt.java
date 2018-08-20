@@ -1,22 +1,29 @@
 package com.problems.interviewcake.code.hash_tables;
 
 public class SortScores_Attempt{
-    public static int[] sortScores(int[] scores, int highestPossibleScore){
+    public static int[] sortScores(int[] unsortedScores, int highestPossibleValue){
 
-        int[] scoreCounts = new int[highestPossibleScore + 1];
-        for(int score:scores) scoreCounts[score]++;
+        //declare scoreCounts array of length highestvalue + 1
+        int[] scoreCounts = new int[highestPossibleValue + 1];
 
-        int[] sortedScores = new int[scores.length];
-        int currentSortedIndex = 0;
+        //loop through scores and increment scoreCounts in for each loop
+        for(int score:unsortedScores) scoreCounts[score]++;
 
-        for(int score = highestPossibleScore; score >= 0; score--){
+        //created sortedScores array and currentSortedIndex variable
+        int[] sortedScores = new int[unsortedScores.length];
+
+        int currSortedIndex = 0;
+
+        //loop in reverse fashion and get scorecount
+        for(int score = highestPossibleValue; score >= 0; score--){
             int scoreCount = scoreCounts[score];
-            for(int i=0; i < scoreCount; i++){
-                sortedScores[currentSortedIndex] = score;
-                currentSortedIndex++;
+            for(int times = 0; times < scoreCount; times++){
+                sortedScores[currSortedIndex] = score;
+                currSortedIndex++;
             }
         }
         return sortedScores;
+
     }
 
 }

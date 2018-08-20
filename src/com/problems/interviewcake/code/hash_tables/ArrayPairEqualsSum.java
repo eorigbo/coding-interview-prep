@@ -6,6 +6,7 @@ import java.util.Set;
 public class ArrayPairEqualsSum {
 
     public static boolean arrayPairEqualsSum(int[] arrayNumbers, int sumArrayPair){
+        if(arrayNumbers.length < 2) return false;
 
         Set<Integer> arrayNumbersSeen = new HashSet<>();
 

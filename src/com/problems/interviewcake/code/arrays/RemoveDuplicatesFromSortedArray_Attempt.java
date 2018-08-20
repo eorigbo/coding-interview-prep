@@ -3,22 +3,28 @@ package com.problems.interviewcake.code.arrays;
 public class RemoveDuplicatesFromSortedArray_Attempt{
 
     public static int removeDuplicates(int[] theArray){
-
-        if(theArray == null || theArray.length < 2)throw new IllegalArgumentException("Array length should be greater than 1");
+        //return 0 if array is empty
+        if(theArray.length < 2) return 1;
 
         int j = 0;
+
+        //loop through array but exclude last element
         for(int i = 0; i < theArray.length - 1; i++){
+
+            //if current element not equal to one after it, assign to element j and increment j
             if(theArray[i] != theArray[i+1]){
-                int valueAtI = theArray[i];
-                theArray[i] = theArray[j];
-                theArray[j] = valueAtI;
+                theArray[j] = theArray[i];
                 j++;
             }
+
         }
-        int valueAtI = theArray[theArray.length-1];
-        theArray[theArray.length-1] = theArray[j];
-        theArray[j] = valueAtI;
+
+        //for last element add to j and increment j
+        theArray[j] = theArray[theArray.length-1];
         j++;
+
+        //return j as length of new array
         return j;
+
     }
 }

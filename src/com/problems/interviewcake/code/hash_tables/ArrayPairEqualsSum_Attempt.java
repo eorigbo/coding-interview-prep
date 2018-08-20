@@ -7,14 +7,16 @@ public class ArrayPairEqualsSum_Attempt {
 
     public static boolean arrayPairEqualsSum(int[] theArray, int theSum){
 
-        Set<Integer> matchingNumbers = new HashSet<>();
+        if(theArray.length < 2) return false;
 
-        for(int currInt: theArray){
-            int secondNumber = theSum - currInt;
-            if(matchingNumbers.contains(secondNumber)){
+        Set<Integer> matchingNums = new HashSet<>();
+
+        for(int currNum: theArray){
+            int matchingNum = theSum - currNum;
+            if(matchingNums.contains(matchingNum)){
                 return true;
             }else{
-                matchingNumbers.add(currInt);
+                matchingNums.add(currNum);
             }
         }
         return false;

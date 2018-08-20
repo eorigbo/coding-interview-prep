@@ -39,4 +39,12 @@ public class SortScoresTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void repeatedScoresTest() {
+        final int[] scores = {20, 10, 30, 30, 10, 20};
+        final int[] expected = {30, 30, 20, 20, 10, 10};
+        final int[] actual = sortScores(scores, 100);
+        assertArrayEquals(expected, actual);
+    }
+
 }
