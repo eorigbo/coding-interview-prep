@@ -2,13 +2,14 @@ package com.problems.interviewcake.code.sorting_searching;
 
 public class DuplicateInUnsortedArray_Attempt {
 
-    public static int findDuplicate(int[] unsortedArray){
-        if(unsortedArray.length < 2) throw new IllegalArgumentException("Duplicates cannot exist in array with less than 2 elements.");
+    public static int findDuplicate(int[] theArray){
+        //initialize floor as 1, ceiling as arraylength
+        int floor = 1, ceiling = theArray.length-1;
 
-        //floor is 1, ceiling is arraylength
-        int floor = 1, ceiling = unsortedArray.length - 1;
+        // if arraylength is less than 2 no duplicates so throw exception
+        if (theArray.length < 2) throw new IllegalArgumentException("At least two ints are required.");
 
-        //while floor < ceiling
+        // while floor < ceiling
         while(floor < ceiling){
             int midpoint = ((ceiling - floor)/2) + floor;
             int lowerFloor = floor;
@@ -16,26 +17,21 @@ public class DuplicateInUnsortedArray_Attempt {
             int upperFloor = midpoint + 1;
             int upperCeiling = ceiling;
 
-            //populate distinct lower items and items in lower range
-            int distinctLowerItems = lowerCeiling - lowerFloor + 1;
             int itemsLowerRange = 0;
+            int distinctLowerItems = lowerCeiling - lowerFloor + 1;
 
-            for(int i=0; i< unsortedArray.length; i++){
-                if(unsortedArray[i] >= lowerFloor && unsortedArray[i] <= lowerCeiling) itemsLowerRange++;
+            for(int currInt: theArray){
+                if(currInt >= lowerFloor && currInt <= lowerCeiling)itemsLowerRange++;
             }
 
-            //do a sort of binary test
             if(itemsLowerRange > distinctLowerItems){
-                ceiling = lowerCeiling;
                 floor = lowerFloor;
+                ceiling = lowerCeiling;
             }else{
-                ceiling = upperCeiling;
                 floor = upperFloor;
+                ceiling = upperCeiling;
             }
-
         }
-
-        //outside loop return ceiling
         return ceiling;
     }
 }

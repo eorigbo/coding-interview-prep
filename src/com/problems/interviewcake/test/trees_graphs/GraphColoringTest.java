@@ -6,11 +6,34 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.problems.interviewcake.code.scratch_pad.ValidateColoringOptions.getUsedColorsCheck;
 import static com.problems.interviewcake.code.trees_graphs.GraphColoring_Attempt.colorGraph;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class GraphColoringTest {
+    @Test
+    public void usedColorsUnimportantTest() {
+        final GraphNode nodeA = new GraphNode("A");
+        final GraphNode nodeB = new GraphNode("B");
+        final GraphNode nodeC = new GraphNode("C");
+        final GraphNode nodeD = new GraphNode("D");
+        nodeA.addNeighbor(nodeB);
+        nodeB.addNeighbor(nodeA);
+        nodeB.addNeighbor(nodeC);
+        nodeC.addNeighbor(nodeB);
+        nodeC.addNeighbor(nodeD);
+        nodeD.addNeighbor(nodeC);
+        final GraphNode[] graph = new GraphNode[] {nodeA, nodeB, nodeC, nodeD};
+        colorGraph(graph, getColors());
+
+        boolean expected = true;
+        boolean actual = getUsedColorsCheck(graph);
+
+        assertEquals(expected,actual);
+    }
+
     @Test
     public void lineGraphTest() {
         final GraphNode nodeA = new GraphNode("A");

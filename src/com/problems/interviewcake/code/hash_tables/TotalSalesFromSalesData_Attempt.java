@@ -5,33 +5,35 @@ import java.util.Map;
 
 public class TotalSalesFromSalesData_Attempt{
     public static int[][] totalSalesFromSalesData(int[][] salesData){
-        //add sales data to linkedhashmap
-        Map<Integer,Integer> salesPivot = new LinkedHashMap<>();
 
-        for(int i=0; i < salesData.length; i++){
-            int productID = salesData[i][0];
-            int salesQuantity = salesData[i][1];
+        if(salesData == null || salesData.length <= 1) return salesData;
 
-            if(salesPivot.containsKey(productID)){
-                salesQuantity = salesQuantity + salesPivot.get(productID);
-            }
+        //create a linkedhashmap to hold the sales data pivoted by productID
+        Map<Integer, Integer> pivot= new LinkedHashMap<>();
 
-            salesPivot.put(productID,salesQuantity);
+        //loop through salesData and populate hashmap
+        for(int[] sale: salesData){
+            int productID = sale[0];
+            int qty = sale[1];
+
+            if(pivot.containsKey(productID)) qty = qty + pivot.get(productID);
+
+            pivot.put(productID,qty);
+
         }
 
-        //create new array
-        int[][] salesByProduct = new int[salesPivot.keySet().size()][2];
-        int currSalesIndex = 0;
+        //create new array to hold pivoted data
+        int[][] prodSales = new int[pivot.keySet().size()][2];
+        int pivotIndex = 0;
 
-
-        //populate new array with contents of linkedHashmap and return
-        for(int key: salesPivot.keySet()){
-            salesByProduct[currSalesIndex][0] = key;
-            salesByProduct[currSalesIndex][1] = salesPivot.get(key);
-            currSalesIndex++;
+        //loop through keys of hashmap and have a counter for new array. assign data to relevant fields
+        for(int key: pivot.keySet()){
+            prodSales[pivotIndex][0] = key;
+            prodSales[pivotIndex][1] = pivot.get(key);
+            pivotIndex++;
         }
 
-        return salesByProduct;
+        return prodSales;
 
     }
 

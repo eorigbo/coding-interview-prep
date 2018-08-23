@@ -2,38 +2,33 @@ package com.problems.interviewcake.code.greedy;
 
 public class HighestProduct3Ints_Attempt {
 
-    public static int highestProduct3Ints(int[] theArray){
+    public static int highestProduct3Ints(int[] theInts){
+        if(theInts.length < 3) throw new IllegalArgumentException("At least 3 ints are needed.");
 
-        if(theArray.length < 3) throw new IllegalArgumentException("The array must have at least 3 integers.");
+        //initialize highProd3 as first 3 prod, highProd2 and lowProd2 as first 2 prod, highest as max of first 2, lowest as min of first 2
+        int highProd3 = theInts[0] * theInts[1] * theInts[2];
+        int highProd2 = theInts[0] * theInts[1];
+        int lowProd2 = theInts[0] * theInts[1];
+        int highest = Math.max(theInts[0],theInts[1]);
+        int lowest = Math.min(theInts[0],theInts[1]);
 
-        int highestProd3 = theArray[0] * theArray[1] * theArray[2];
-        int highestProd2 = theArray[0] * theArray[1];
-        int lowestProd2 = theArray[0] * theArray[1];
-        int highest = Math.max(theArray[0], theArray[1]);
-        int lowest = Math.min(theArray[0], theArray[1]);
+        //start index from 2 (TEST)
+        for(int i=2; i < theInts.length; i++){
+            highProd3 = Math.max(highProd3, Math.max(highProd2 * theInts[i],
+                    lowProd2 * theInts[i]));
 
-        for(int i = 2; i < theArray.length; i++){
-            int currInt = theArray[i];
+            highProd2 = Math.max(highProd2, Math.max(highest * theInts[i],
+                    lowest * theInts[i]));
 
-            highestProd3 = Math.max(Math.max(highestProd3,
-                    highestProd2 * currInt),
-                    lowestProd2 * currInt);
+            lowProd2 = Math.min(lowProd2, Math.min(highest * theInts[i],
+                    lowest * theInts[i]));
 
-            highestProd2 = Math.max(Math.max(highestProd2,
-                    highest * currInt),
-                    lowest * currInt);
+            highest = Math.max(highest, theInts[i]);
 
-            lowestProd2 = Math.min(Math.min(lowestProd2,
-                    highest * currInt),
-                    lowest * currInt);
-
-            highest = Math.max(highest,currInt);
-
-            lowest = Math.min(lowest, currInt);
-
+            lowest = Math.min(lowest, theInts[i]);
         }
 
-        return highestProd3;
+        return highProd3;
     }
 
 }
