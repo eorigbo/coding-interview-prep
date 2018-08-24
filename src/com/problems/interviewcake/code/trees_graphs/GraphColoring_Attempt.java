@@ -6,22 +6,19 @@ import java.util.Set;
 public class GraphColoring_Attempt {
     public static void colorGraph(GraphNode[] graph, String[] colors){
 
-        //loop through nodes
+        //Loop through graph array and get neighbors
         for(GraphNode node: graph){
             Set<GraphNode> neighbors = node.getNeighbors();
+            if(neighbors.contains(node)) throw new IllegalArgumentException("Node cannot be legally colored as it has a loop.");
+
             Set<String> illegalColors = new HashSet<>();
 
-            //getneighbors
+            //for each neighbor add colors for those with colors into illegalcolors set
             for(GraphNode neighbor: neighbors){
-                //check if loop exists
-                if(neighbors.contains(node)) throw new IllegalArgumentException("Graph cannot be legally colored as it contains a loop.");
-
-                //loop through neighbors and populate illegalColors set
                 if(neighbor.hasColor()) illegalColors.add(neighbor.getColor());
-
             }
 
-            //loop through colors and add first color not in illegalColors
+            //loop through colors and apply the first legal color to the node then break;
             for(String color: colors){
                 if(!illegalColors.contains(color)){
                     node.setColor(color);
@@ -30,7 +27,6 @@ public class GraphColoring_Attempt {
             }
 
         }
-
 
     }
 }

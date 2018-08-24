@@ -1,13 +1,38 @@
 package com.problems.interviewcake.code.trees_graphs;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class ValidBinarySearchTreeChecker_Attempt {
-    public static boolean isBinarySearchTree(BinaryTreeNode node){
-        return isBinarySearchTree(node, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    private static class NodeBound{
+        BinaryTreeNode node;
+        int lowerBound;
+        int upperBound;
+
+        NodeBound(BinaryTreeNode node, int lowerBound, int upperBound){
+            this.node = node;
+            this.lowerBound = lowerBound;
+            this.upperBound = upperBound;
+        }
     }
 
-    private static boolean isBinarySearchTree(BinaryTreeNode node, int lowerBound, int upperBound){
+    public static boolean isBinarySearchTree(BinaryTreeNode node){
         if(node == null) return true;
-        if(node.value <= lowerBound || node.value >= upperBound) return false;
-        return isBinarySearchTree(node.left,lowerBound,node.value) && isBinarySearchTree(node.right, node.value, upperBound);
+
+        Deque<NodeBound> nodeBounds = new ArrayDeque<>();
+        nodeBounds.add(new NodeBound(node,Integer.MIN_VALUE,Integer.MAX_VALUE));
+
+        while(!nodeBounds.isEmpty()){
+            NodeBound nodeBound = nodeBounds.pop();
+            BinaryTreeNode currNode = nodeBound.node;
+            int lowerBound = nodeBound.lowerBound;
+            int upperBound = nodeBound.upperBound;
+
+            if(currNode.value <= lowerBound || currNode.value >= upperBound) return false;
+
+            if(currNode.left != null) nodeBounds.add(new NodeBound(currNode.left, lowerBound, currNode.value));
+            if(currNode.right != null) nodeBounds.add(new NodeBound(currNode.right, currNode.value, upperBound));
+        }
+        return true;
     }
 }

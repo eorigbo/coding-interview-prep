@@ -3,13 +3,13 @@ package com.problems.interviewcake.code.sorting_searching;
 public class DuplicateInUnsortedArray_Attempt {
 
     public static int findDuplicate(int[] theArray){
-        //initialize floor as 1, ceiling as arraylength
-        int floor = 1, ceiling = theArray.length-1;
+        //floor is 1, ceiling is arraylength -1
+        int floor = 1, ceiling = theArray.length - 1;
 
-        // if arraylength is less than 2 no duplicates so throw exception
-        if (theArray.length < 2) throw new IllegalArgumentException("At least two ints are required.");
+        //if length < 2 through exception
+        if (theArray.length < 2) throw  new IllegalArgumentException("At least 2 elements are needed to find duplicates");
 
-        // while floor < ceiling
+        // while floor < ceiling create ranges
         while(floor < ceiling){
             int midpoint = ((ceiling - floor)/2) + floor;
             int lowerFloor = floor;
@@ -17,21 +17,23 @@ public class DuplicateInUnsortedArray_Attempt {
             int upperFloor = midpoint + 1;
             int upperCeiling = ceiling;
 
-            int itemsLowerRange = 0;
-            int distinctLowerItems = lowerCeiling - lowerFloor + 1;
+            int itemsLowRange = 0;
+            int distinctLowRangeItems = lowerCeiling - lowerFloor + 1;
 
-            for(int currInt: theArray){
-                if(currInt >= lowerFloor && currInt <= lowerCeiling)itemsLowerRange++;
+            for(int item: theArray){
+                if (item >= lowerFloor && item <= lowerCeiling) itemsLowRange++;
             }
 
-            if(itemsLowerRange > distinctLowerItems){
+            if(itemsLowRange > distinctLowRangeItems){
                 floor = lowerFloor;
                 ceiling = lowerCeiling;
-            }else{
+            } else{
                 floor = upperFloor;
                 ceiling = upperCeiling;
             }
         }
+
+        //return ceiling index outside loop
         return ceiling;
     }
 }
