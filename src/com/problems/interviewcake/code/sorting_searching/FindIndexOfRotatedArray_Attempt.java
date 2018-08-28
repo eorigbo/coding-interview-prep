@@ -2,30 +2,26 @@ package com.problems.interviewcake.code.sorting_searching;
 
 public class FindIndexOfRotatedArray_Attempt {
 
-    public static int findIndexOfRotatedArray(String[] theArray){
-        //initialize floor and firstword as 0, ceiling as arraylength - 1 (TEST)
-        if(theArray.length < 2) throw new IllegalArgumentException("At least two strings are required for rotation.");
+    public static int findIndexOfRotatedArray(String[] inputString){
+        if(inputString.length < 2) throw new IllegalArgumentException("At least two strings are needed to rotate array.");
 
-        int floor = 0, ceiling = theArray.length - 1;
-        String firstWord = theArray[0];
+        int floor = 0;
+        int ceiling = inputString.length - 1;
 
-        //if the last string compared to the first is >= 0, or array has only one string return index 0
-        if(theArray[theArray.length-1].compareTo(firstWord) >= 0) return 0;
+        String firstWord = inputString[0];
 
-        //while floor < ceiling
+        if(inputString[ceiling].compareTo(firstWord) >= 0) return 0;
+
         while(floor < ceiling){
-            //calculate midpoint and compare string at midpoint to firstword
             int midpoint = ((ceiling - floor)/2) + floor;
-
-            //if >= 0, we are fine to that point so move floor to midpoint, else move ceiling
-            if(theArray[midpoint].compareTo(firstWord) >= 0){
+            if(inputString[midpoint].compareTo(firstWord) >= 0){
                 floor = midpoint;
             }else{
                 ceiling = midpoint;
             }
             if(floor + 1 == ceiling) break;
         }
-
         return ceiling;
     }
+
 }

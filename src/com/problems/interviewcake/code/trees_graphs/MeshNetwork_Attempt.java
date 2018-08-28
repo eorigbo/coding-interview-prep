@@ -4,42 +4,49 @@ import java.util.*;
 
 public class MeshNetwork_Attempt {
     private static String[] reconstructPath(Map<String,String> previousNodes, String endNode){
-        List<String> reversedPath = new ArrayList<>();
         String currNode = endNode;
+        List<String> reversedPath = new ArrayList<>();
 
         while(currNode != null){
             reversedPath.add(currNode);
             currNode = previousNodes.get(currNode);
         }
+
         Collections.reverse(reversedPath);
 
         return reversedPath.toArray(new String[0]);
     }
 
     public static String[] getPath(Map<String,String[]> graph, String startNode, String endNode){
-        if(!graph.containsKey(startNode) || !graph.containsKey(endNode)) throw new IllegalArgumentException("Start or end node is not in map.");
 
-        //Initialize Queue and HashMap
+        //check if start and end are in graph
+        if(!graph.containsKey(startNode) || !graph.containsKey(endNode)) throw new IllegalArgumentException("Start node or end node is not in graph.");
+
+        //initialize queue and Hashmap with start
         Queue<String> nodesToVisit = new ArrayDeque<>();
         nodesToVisit.add(startNode);
 
-        Map<String, String> howWeReachedNodes = new HashMap<>();
-        howWeReachedNodes.put(startNode,null);
+        Map<String,String> howWeReachedNode = new HashMap<>();
+        howWeReachedNode.put(startNode,null);
 
-        //Do BFS, and when endNode is found return reconstructpath, else add to queue and hashmap
+        //start bfs with queue
         while(!nodesToVisit.isEmpty()){
             String node = nodesToVisit.remove();
-            if(node.equals(endNode)) return reconstructPath(howWeReachedNodes, endNode);
+            if(node.equals(endNode)) return reconstructPath(howWeReachedNode, endNode);
 
             for(String neighbor: graph.get(node)){
-                if(!howWeReachedNodes.containsKey(neighbor)){
-                    howWeReachedNodes.put(neighbor,node);
+                if(!howWeReachedNode.containsKey(neighbor)){
                     nodesToVisit.add(neighbor);
+                    howWeReachedNode.put(neighbor,node);
                 }
             }
         }
 
-        //return null when path is not found
+        //if node is end node reconstruct path
+
+        //loop through neighbors and if not in hashmap add to hashmap and queue
+
+        //outside while loop return null
         return null;
     }
 }
