@@ -1,6 +1,6 @@
 package com.problems.interviewcake.test.stacks_queues;
 
-import com.problems.interviewcake.code.stacks_queues.MaxStack;
+import com.problems.interviewcake.code.stacks_queues.MaxStack_Attempt;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MaxStackTest {
     @Test
     public void maxStackTest() {
-        final MaxStack s = new MaxStack();
+        final MaxStack_Attempt s = new MaxStack_Attempt();
         s.push(5);
         assertEquals(5, s.getMax(), "check max after 1st push");
         s.push(4);
