@@ -2,27 +2,30 @@ package com.problems.interviewcake.code.arrays;
 
 public class ReverseWords_Attempt{
 
-    private static void reverseChars(char[] theCharArray, int start, int end){
+    public static void reverseWords(char[] sentence){
+        //initialize start and end
+        int start = 0, end = 0;
 
-        while(start < end){
-            char tmp = theCharArray[start];
-            theCharArray[start] = theCharArray[end];
-            theCharArray[end] = tmp;
-            start++;
-            end--;
+        //reverse entire sentence
+        reverseChars(sentence, 0, sentence.length-1);
+
+        //reverse each word
+        while(start < sentence.length){
+            while(start < end || start < sentence.length && sentence[start] == ' ') start++;
+
+            while(end < start || end < sentence.length && sentence[end] != ' ') end++;
+
+            reverseChars(sentence, start, end-1);
         }
     }
 
-    public static void reverseWords(char[] word){
-        //if(word.length < 2) throw new IllegalArgumentException("The word needs at least 2 characters to be reversed.");
-
-        int start = 0, end = 0;
-        reverseChars(word,start,word.length - 1);
-
-        while(start < word.length){
-            while(start < end || start < word.length && word[start] == ' ') start++;
-            while(end < start || end < word.length && word[end] != ' ') end++;
-            reverseChars(word,start,end-1);
+    private static void reverseChars(char[] theChar, int start, int end){
+        while(start < end){
+            char tmp = theChar[start];
+            theChar[start] = theChar[end];
+            theChar[end] = tmp;
+            start++;
+            end--;
         }
     }
 

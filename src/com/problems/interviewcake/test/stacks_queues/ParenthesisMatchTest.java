@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.stacks_queues;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.stacks_queues.ParenthesisMatch.getClosingParen;
+import static com.problems.interviewcake.code.stacks_queues.ParenthesisMatch_Attempt.getClosingParen;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
