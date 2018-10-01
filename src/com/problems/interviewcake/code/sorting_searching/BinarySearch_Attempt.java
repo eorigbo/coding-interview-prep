@@ -1,24 +1,20 @@
 package com.problems.interviewcake.code.sorting_searching;
 
 public class BinarySearch_Attempt {
-    public static boolean binarySearch(int[] theArray, int target){
+    public static boolean binarySearch(int[] arr, int target){
+
         int floor = -1;
-        int ceiling = theArray.length;
+        int ceiling = arr.length;
 
-        while(floor+1 < ceiling){
-            int midpoint = ((ceiling - floor)/2) + floor;
-            int guessValue = theArray[midpoint];
-
-            if(guessValue == target) return true;
-
-            if(guessValue > target){
-                ceiling = midpoint;
-            }else{
-                floor = midpoint;
-            }
+        while(floor + 1 < ceiling){
+            int mid = (ceiling - floor)/2 + floor;
+            if (arr[mid] == target) return true;
+            else if(arr[mid] > target)ceiling = mid;
+            else floor = mid;
         }
         return false;
     }
+
 
 
 }

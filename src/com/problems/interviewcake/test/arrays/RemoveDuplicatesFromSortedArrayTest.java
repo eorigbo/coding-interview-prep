@@ -26,4 +26,34 @@ public class RemoveDuplicatesFromSortedArrayTest {
 
         Assertions.assertEquals(expectedNewArraySize,actualNewArraySize);
     }
+
+    @Test
+    public void emptyArrayTest(){
+        int[] theArray = new int[]{};
+
+        int expectedNewArraySize = 0;
+        int actualNewArraySize = removeDuplicates(theArray);
+
+        Assertions.assertEquals(expectedNewArraySize,actualNewArraySize);
+    }
+
+    @Test
+    public void singleItemArrayTest(){
+        int[] theArray = new int[]{2};
+
+        int expectedNewArraySize = 1;
+        int actualNewArraySize = removeDuplicates(theArray);
+
+        Assertions.assertEquals(expectedNewArraySize,actualNewArraySize);
+    }
+
+    @Test
+    public void emptyArrayFiveItemsTest(){
+        int[] theArray = new int[5];
+
+        int expectedNewArraySize = 1;
+        int actualNewArraySize = removeDuplicates(theArray);
+
+        Assertions.assertEquals(expectedNewArraySize,actualNewArraySize);
+    }
 }

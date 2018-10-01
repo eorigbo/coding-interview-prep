@@ -1,17 +1,15 @@
 package com.problems.interviewcake.code.dynamic_programming;
 
 public class UnboundedKnapsack_Attempt {
-    public static int getMaxValue(ItemType[] types, int capacity){
+    public static int getMaxValue(ItemType[] items, int maxCapacity){
+        int[] maxValue = new int[maxCapacity+1];
 
-        int[] maxValue = new int[capacity+1];
-
-        for(ItemType type: types){
-            for(int currCapacity = type.weight; currCapacity <= capacity; currCapacity++){
-                if(type.weight == 0 && type.value != 0) throw new RuntimeException("Cake with 0 weight has positive value.");
-
-                maxValue[currCapacity] = Math.max(maxValue[currCapacity],type.value + maxValue[currCapacity - type.weight]);
+        for(ItemType item: items){
+            for(int i = item.weight; i <= maxCapacity; i++){
+                if(item.weight == 0 && item.value > 0) throw new IllegalArgumentException("Item with no weight has positive value.");
+                maxValue[i] = Math.max(maxValue[i], item.value + maxValue[i - item.weight]);
             }
         }
-        return maxValue[capacity];
+        return maxValue[maxCapacity];
     }
 }

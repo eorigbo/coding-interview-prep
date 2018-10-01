@@ -8,14 +8,12 @@ public class StringHasPalindromePermutation_Attempt{
     public static boolean stringHasPalindromePermutation(String theString){
         if(theString.length() < 2) return true;
 
-        Set<Character> oddChars = new HashSet<>();
+        Set<Character> seenChars = new HashSet<>();
+
         for(char currChar: theString.toCharArray()){
-            if(oddChars.contains(currChar)){
-                oddChars.remove(currChar);
-            }else{
-                oddChars.add(currChar);
-            }
+            if(seenChars.contains(currChar)) seenChars.remove(currChar);
+            else seenChars.add(currChar);
         }
-        return oddChars.size() <= 1;
+        return seenChars.size() <= 1;
     }
 }

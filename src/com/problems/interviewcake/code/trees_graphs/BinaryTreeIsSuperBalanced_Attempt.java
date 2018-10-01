@@ -14,25 +14,28 @@ public class BinaryTreeIsSuperBalanced_Attempt {
             this.node = node;
             this.depth = depth;
         }
+
     }
-    public static boolean isBalanced(BinaryTreeNode node){
-        if(node == null) return true;
+    public static boolean isBalanced(BinaryTreeNode root){
+        if(root == null) return true;
 
         Deque<NodeDepth> nodeDepths = new ArrayDeque<>();
-        nodeDepths.add(new NodeDepth(node,0));
         List<Integer> depths = new ArrayList<>(3);
+
+        nodeDepths.push(new NodeDepth(root, 0));
 
         while(!nodeDepths.isEmpty()){
             NodeDepth nodeDepth = nodeDepths.pop();
-            BinaryTreeNode currNode = nodeDepth.node;
+            BinaryTreeNode node = nodeDepth.node;
             int depth = nodeDepth.depth;
 
-            if(currNode.right == null && currNode.left == null){
-                if(!depths.contains(depth)) depths.add(depth);
-                if(depths.size() > 2 || (depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)) return false;
-            }else{
-                if(currNode.left != null) nodeDepths.add(new NodeDepth(currNode.left, depth+1));
-                if(currNode.right != null) nodeDepths.add(new NodeDepth(currNode.right, depth+1));
+            if(node.left == null && node.right == null) {
+                if (!depths.contains(depth)) depths.add(depth);
+                if (depths.size() > 2 || depths.size() == 2 && Math.abs(depths.get(0) - depths.get(1)) > 1)
+                    return false;
+            }else {
+                if (node.left != null) nodeDepths.push(new NodeDepth(node.left, depth + 1));
+                if (node.right != null) nodeDepths.push(new NodeDepth(node.right, depth + 1));
             }
         }
         return true;

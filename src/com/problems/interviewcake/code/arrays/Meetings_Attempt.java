@@ -8,7 +8,7 @@ import java.util.List;
 public class Meetings_Attempt{
 
     public static List<Meeting> mergeMeetings(List<Meeting> meetings){
-        if(meetings.size() < 1) throw new IllegalArgumentException("meetings list should have at least one meeting.");
+        if(meetings.size() < 1) throw new IllegalArgumentException("At least one meeting should be in meetings list.");
 
         List<Meeting> sortedMeetings = new ArrayList<>();
 
@@ -21,16 +21,19 @@ public class Meetings_Attempt{
         });
 
         List<Meeting> mergedMeetings = new ArrayList<>();
+
         mergedMeetings.add(sortedMeetings.get(0));
 
         for(Meeting meeting: sortedMeetings){
             Meeting lastMerged = mergedMeetings.get(mergedMeetings.size()-1);
-            if(lastMerged.getEndTime() >= meeting.getStartTime()){
+
+            if(meeting.getStartTime() <= lastMerged.getEndTime()){
                 lastMerged.setEndTime(Math.max(lastMerged.getEndTime(), meeting.getEndTime()));
-            }else{
+            } else {
                 mergedMeetings.add(meeting);
             }
         }
+
         return mergedMeetings;
     }
 

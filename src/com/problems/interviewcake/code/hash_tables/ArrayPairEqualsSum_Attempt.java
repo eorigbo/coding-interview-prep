@@ -5,22 +5,17 @@ import java.util.Set;
 
 public class ArrayPairEqualsSum_Attempt {
 
-    public static boolean arrayPairEqualsSum(int[] theArray, int theSum){
+    public static boolean arrayPairEqualsSum(int[] arr, int sum){
+        if(arr.length < 2) return false;
 
-        if(theArray.length < 2) return false;
+        Set<Integer> remainders = new HashSet<>();
 
-        Set<Integer> matchingNums = new HashSet<>();
-
-        for(int currNum: theArray){
-            int matchingNum = theSum - currNum;
-            if(matchingNums.contains(matchingNum)){
-                return true;
-            }else{
-                matchingNums.add(currNum);
-            }
+        for(int currInt: arr){
+            int remainder = sum -  currInt;
+            if(remainders.contains(remainder)) return true;
+            else remainders.add(currInt);
         }
         return false;
     }
-
 
 }

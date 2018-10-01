@@ -2,25 +2,23 @@ package com.problems.interviewcake.code.arrays;
 
 public class CheckSingleRiffle_Attempt{
 
-    public static boolean isSingleRiffle( int[] first, int[] second, int[] deck){
+    public static boolean isSingleRiffle(int[] firstHalf, int[] secondHalf, int[] deck){
 
-        //initialize firstindex and secondindex
-        int firstIndex = 0, secondIndex = 0;
+        int firstIdx = 0, secondIdx = 0;
 
-        //loop through deck array
+        //loop through deck
         for(int card: deck){
-            boolean firstExhausted = firstIndex >= first.length;
-            boolean secondExhausted = secondIndex >= second.length;
+            boolean firstExh = firstIdx >= firstHalf.length;
+            boolean secondExh = secondIdx >= secondHalf.length;
 
-            if(!firstExhausted && first[firstIndex] == card){
-                firstIndex++;
-            }else if(!secondExhausted && second[secondIndex] == card){
-                secondIndex++;
-            }else{
-                return false;
-            }
+            if(!firstExh && firstHalf[firstIdx] == card) firstIdx++;
+
+            else if(!secondExh && secondHalf[secondIdx] == card) secondIdx++;
+
+            else return false;
         }
-        return true;
 
+        return true;
     }
+
 }

@@ -40,9 +40,9 @@ public class reverseCharsSkypeInterview {
 
     public static void main(String[] args) {
         System.out.println("Running tests..");
-        System.out.println(" - Test emptyStringTest: " + emptyStringTest());
-        System.out.println(" - Test singleCharacterstringTest: " + singleCharacterStringTest());
-        System.out.println(" - Test longerStringTest: " + longerStringTest());
+        System.out.println(" - emptyStringTest: " + emptyStringTest());
+        System.out.println(" - singleCharacterStringTest: " + singleCharacterStringTest());
+        System.out.println(" - longerStringTest: " + longerStringTest());
         System.out.println("End of tests.");
     }
 }

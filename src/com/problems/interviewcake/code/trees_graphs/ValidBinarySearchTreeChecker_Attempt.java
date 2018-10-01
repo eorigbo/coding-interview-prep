@@ -16,22 +16,22 @@ public class ValidBinarySearchTreeChecker_Attempt {
         }
     }
 
-    public static boolean isBinarySearchTree(BinaryTreeNode node){
-        if(node == null) return true;
+    public static boolean isBinarySearchTree(BinaryTreeNode root){
+        if(root == null) return true;
 
-        Deque<NodeBound> nodeBounds = new ArrayDeque<>();
-        nodeBounds.add(new NodeBound(node,Integer.MIN_VALUE,Integer.MAX_VALUE));
+        Deque<NodeBound> nodesToVisit = new ArrayDeque<>();
+        nodesToVisit.add(new NodeBound(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
-        while(!nodeBounds.isEmpty()){
-            NodeBound nodeBound = nodeBounds.pop();
-            BinaryTreeNode currNode = nodeBound.node;
+        while(!nodesToVisit.isEmpty()){
+            NodeBound nodeBound = nodesToVisit.pop();
+            BinaryTreeNode node = nodeBound.node;
             int lowerBound = nodeBound.lowerBound;
             int upperBound = nodeBound.upperBound;
 
-            if(currNode.value <= lowerBound || currNode.value >= upperBound) return false;
+            if(node.value <= lowerBound || node.value >= upperBound) return false;
 
-            if(currNode.left != null) nodeBounds.add(new NodeBound(currNode.left, lowerBound, currNode.value));
-            if(currNode.right != null) nodeBounds.add(new NodeBound(currNode.right, currNode.value, upperBound));
+            if(node.left != null) nodesToVisit.push(new NodeBound(node.left, lowerBound, node.value));
+            if(node.right != null) nodesToVisit.push(new NodeBound(node.right, node.value, upperBound));
         }
         return true;
     }

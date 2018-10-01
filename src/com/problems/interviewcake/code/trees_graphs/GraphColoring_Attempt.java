@@ -5,27 +5,24 @@ import java.util.Set;
 
 public class GraphColoring_Attempt {
     public static void colorGraph(GraphNode[] graph, String[] colors){
+        //if graph is null throw exception
+        if(graph.length < 1) throw new IllegalArgumentException("At least one graph node is needed for coloring.");
 
-        //Loop through graph array and get neighbors
+        //loop through each node
         for(GraphNode node: graph){
-            Set<GraphNode> neighbors = node.getNeighbors();
-            if(neighbors.contains(node)) throw new IllegalArgumentException("Node cannot be legally colored as it has a loop.");
+            Set<String> usedColors = new HashSet<>();
+            for(GraphNode neighbor: node.getNeighbors()){
+                if(neighbor.equals(node)) throw new IllegalArgumentException("Node connects with itself and cannot be legally colored.");
 
-            Set<String> illegalColors = new HashSet<>();
-
-            //for each neighbor add colors for those with colors into illegalcolors set
-            for(GraphNode neighbor: neighbors){
-                if(neighbor.hasColor()) illegalColors.add(neighbor.getColor());
+                if(neighbor.hasColor()) usedColors.add(neighbor.getColor());
             }
 
-            //loop through colors and apply the first legal color to the node then break;
             for(String color: colors){
-                if(!illegalColors.contains(color)){
+                if(!usedColors.contains(color)){
                     node.setColor(color);
                     break;
                 }
             }
-
         }
 
     }

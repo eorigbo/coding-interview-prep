@@ -6,35 +6,32 @@ import java.util.Map;
 public class TotalSalesFromSalesData_Attempt{
     public static int[][] totalSalesFromSalesData(int[][] salesData){
 
-        if(salesData == null || salesData.length <= 1) return salesData;
+        //create linkedhashmap to pivot sales
+        Map<Integer, Integer> salesPivot = new LinkedHashMap<>();
 
-        //create a linkedhashmap to hold the sales data pivoted by productID
-        Map<Integer, Integer> pivot= new LinkedHashMap<>();
-
-        //loop through salesData and populate hashmap
+        //loop through salesData and populate salesPivot
         for(int[] sale: salesData){
-            int productID = sale[0];
+            int productId = sale[0];
             int qty = sale[1];
 
-            if(pivot.containsKey(productID)) qty = qty + pivot.get(productID);
+            if(salesPivot.containsKey(productId)) qty = qty + salesPivot.get(productId);
 
-            pivot.put(productID,qty);
-
+            salesPivot.put(productId, qty);
         }
 
-        //create new array to hold pivoted data
-        int[][] prodSales = new int[pivot.keySet().size()][2];
-        int pivotIndex = 0;
+        //create aggregated salesByProduct array
+        int[][] salesByProduct = new int[salesPivot.keySet().size()][2];
+        int salesProdIdx = 0;
 
-        //loop through keys of hashmap and have a counter for new array. assign data to relevant fields
-        for(int key: pivot.keySet()){
-            prodSales[pivotIndex][0] = key;
-            prodSales[pivotIndex][1] = pivot.get(key);
-            pivotIndex++;
+        //populate by looping through array and adding data from salesPivot
+        for(int product: salesPivot.keySet()){
+            salesByProduct[salesProdIdx][0] = product;
+            salesByProduct[salesProdIdx][1] = salesPivot.get(product);
+            salesProdIdx++;
         }
 
-        return prodSales;
-
+        //return the salesByProduct
+        return salesByProduct;
     }
 
 }

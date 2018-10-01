@@ -2,23 +2,26 @@ package com.problems.interviewcake.code.greedy;
 
 public class ProductOfAllIntsExceptAtIndex_Attempt {
 
-    public static int[] getProducts(int[] theArray){
-        if(theArray.length < 2) throw new IllegalArgumentException("not enough");
+    public static int[] getProducts(int[] arr){
+        if(arr.length < 2) throw new IllegalArgumentException("At least 2 elements are needed in array.");
 
-        int[] prodAllExceptIndex = new int[theArray.length];
+        int[] prodAllExc = new int[arr.length];
 
-        int prodSoFar=1;
-        for(int i=0; i < theArray.length; i++){
-            prodAllExceptIndex[i] = prodSoFar;
-            prodSoFar *= theArray[i];
+        int prod = 1;
+
+        for(int i = 0; i < prodAllExc.length; i++){
+            prodAllExc[i] = prod;
+            prod *= arr[i];
         }
 
-        prodSoFar=1;
-        for(int i=theArray.length-1; i >= 0; i--){
-            prodAllExceptIndex[i] *= prodSoFar;
-            prodSoFar *= theArray[i];
+        prod = 1;
+
+        for(int i = prodAllExc.length - 1; i >= 0; i--){
+            prodAllExc[i] *= prod;
+            prod *= arr[i];
         }
-        return prodAllExceptIndex;
+
+        return prodAllExc;
     }
 
 }

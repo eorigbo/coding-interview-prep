@@ -4,21 +4,18 @@ import java.util.*;
 
 public class StringPermutation_Attempt {
 
-    public static Set<String> getPermutations(String theWord){
+    public static Set<String> getPermutations(String theString){
+        if(theString.length() <= 1) return new HashSet<>(Collections.singletonList(theString));
 
-        if(theWord.length() < 1) return new HashSet<>(Collections.singletonList(theWord));
+        String allButLast = theString.substring(0,theString.length()-1); //check substring
+        char lastChar = theString.charAt(theString.length()-1);
 
-        String allButLast = theWord.substring(0,theWord.length()-1);
-        char lastChar = theWord.charAt(theWord.length()-1);
-
-        Set<String> permsButLast = getPermutations(allButLast);
+        Set<String> permsAllButLast = getPermutations(allButLast);
 
         Set<String> permutations = new HashSet<>();
-
-        for(String permButLast: permsButLast){
-            for(int position = 0; position <= allButLast.length(); position++){
-                String permutation = permButLast.substring(0, position) + lastChar
-                        + permButLast.substring(position);
+        for(String permAllButLast: permsAllButLast){
+            for(int i = 0; i <= allButLast.length(); i++){
+                String permutation = permAllButLast.substring(0,i) + lastChar + permAllButLast.substring(i);
                 permutations.add(permutation);
             }
         }
