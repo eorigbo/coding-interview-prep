@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.linked_lists;
 import com.problems.interviewcake.code.linked_lists.LinkedListNode;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.linked_lists.DeleteNode.deleteNode;
+import static com.problems.interviewcake.code.linked_lists.DeleteNode_Attempt.deleteNode;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;

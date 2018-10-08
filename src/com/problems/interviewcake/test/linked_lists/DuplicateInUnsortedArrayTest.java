@@ -1,11 +1,12 @@
-package com.problems.interviewcake.test.sorting_searching;
+package com.problems.interviewcake.test.linked_lists;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.sorting_searching.DuplicateInUnsortedArray_Attempt.findDuplicate;
+import static com.problems.interviewcake.code.linked_lists.DuplicateInUnsortedArray_Attempt.findDuplicate;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DuplicateUnsortedArrayTest {
+public class DuplicateInUnsortedArrayTest {
 
     @Test
     public void justTheRepeatedNumberTest() {
@@ -39,3 +40,4 @@ public class DuplicateUnsortedArrayTest {
         assertEquals(expected, actual);
     }
 }
+
