@@ -4,8 +4,8 @@ public class ReverseLinkedList_Attempt {
 
     public static LinkedListNode reverse(LinkedListNode node){
         LinkedListNode currentNode = node;
-        LinkedListNode previousNode = null;
         LinkedListNode nextNode = null;
+        LinkedListNode previousNode = null;
 
         while(currentNode != null){
             nextNode = currentNode.next;
@@ -17,5 +17,6 @@ public class ReverseLinkedList_Attempt {
         }
 
         return previousNode;
+
     }
 }
