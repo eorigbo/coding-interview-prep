@@ -1,6 +1,6 @@
-package com.problems.interviewcake.test.hash_tables;
+package com.problems.interviewcake.test.trees_graphs;
 
-import com.problems.interviewcake.code.hash_tables.Trie;
+import com.problems.interviewcake.code.trees_graphs.Trie_Attempt;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -10,7 +10,7 @@ public class TrieTest {
 
     @Test
     public void newWordTest() {
-        final Trie trie = new Trie();
+        final Trie_Attempt trie = new Trie_Attempt();
 
         boolean result = trie.addWord("catch");
         assertTrue(result);
@@ -18,7 +18,7 @@ public class TrieTest {
 
     @Test
     public void newPrefixOfPreviousWordTest() {
-        final Trie trie = new Trie();
+        final Trie_Attempt trie = new Trie_Attempt();
 
         boolean result = trie.addWord("cakes");
         assertTrue(result);
@@ -29,7 +29,7 @@ public class TrieTest {
 
     @Test
     public void previousWordTest() {
-        final Trie trie = new Trie();
+        final Trie_Attempt trie = new Trie_Attempt();
 
         boolean result = trie.addWord("cake");
         assertTrue(result);
@@ -40,7 +40,7 @@ public class TrieTest {
 
     @Test
     public void emptyStringTest() {
-        final Trie trie = new Trie();
+        final Trie_Attempt trie = new Trie_Attempt();
 
         boolean result = trie.addWord("");
         assertTrue(result);
