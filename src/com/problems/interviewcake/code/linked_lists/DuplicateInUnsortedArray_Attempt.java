@@ -2,15 +2,14 @@ package com.problems.interviewcake.code.linked_lists;
 
 public class DuplicateInUnsortedArray_Attempt {
     public static int findDuplicate(int[] arr){
-        //Get inside cycle by moving n steps
+        //step 1: get inside the cycle by moving n steps from the head
         int positionInCycle = arr.length;
         int n = arr.length - 1;
 
         for(int i = 0; i < n; i++) positionInCycle = arr[positionInCycle - 1];
 
-        //Find Cycle length by picking a spot and moving until you get back to it
+        //step 2: find the length of the cycle by setting a marker and moving until you return back to it.
         int rememberedPositionInCycle = positionInCycle;
-
         int currentPositionInCycle = arr[positionInCycle - 1];
         int cycleLength = 1;
 
@@ -19,7 +18,8 @@ public class DuplicateInUnsortedArray_Attempt {
             cycleLength++;
         }
 
-        //Find beginning of cycle which is your duplicate by moving first pointer cycle length steps, and then continuing until first pointer == second
+
+        //step 3: find the beginning of the cycle by setting pointerAhead cycle length steps in front of pointerBehind, move both until they're equal
         int pointerAhead = arr.length;
         int pointerBehind = arr.length;
 
@@ -31,6 +31,5 @@ public class DuplicateInUnsortedArray_Attempt {
         }
 
         return pointerBehind;
-
     }
 }

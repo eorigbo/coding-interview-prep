@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.misc;
 import com.problems.interviewcake.code.misc.Rectangle;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.misc.IntersectionTwoRectangles.findRectangularOverlap;
+import static com.problems.interviewcake.code.misc.IntersectionTwoRectangles_Attempt.findRectangularOverlap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IntersectionTwoRectanglesTest {
