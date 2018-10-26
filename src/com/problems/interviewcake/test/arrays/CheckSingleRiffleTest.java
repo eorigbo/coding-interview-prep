@@ -13,6 +13,7 @@ public class CheckSingleRiffleTest {
     public void checkIsSingleRiffle(){
         int[] firstHalf = new int[]{2,3,5,6};
         int[] secondHalf = new int[]{7,8,9,12};
+        //just a comment
 
         int[] shuffleDeck = new int[]{2,3,5,6,7,8,9,12};
 
