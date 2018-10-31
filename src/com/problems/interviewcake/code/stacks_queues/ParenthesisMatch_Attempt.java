@@ -1,20 +1,25 @@
 package com.problems.interviewcake.code.stacks_queues;
 
+import java.util.NoSuchElementException;
+
 public class ParenthesisMatch_Attempt {
 
-    public static int getClosingParen(String brackets, int openingPosition){
-        int openingBrackets = 0;
-        for(int i = openingPosition+1; i < brackets.length(); i++){
-            char currChar = brackets.charAt(i);
-            //if "(" increment brackets
+    public static int getClosingParen(String word, int openingIndex){
+        int openParenCnt = 0;
+        for(int i = openingIndex + 1; i < word.length(); i++){
+            char currChar = word.charAt(i);
             if(currChar == '('){
-                openingBrackets++;
-            } else if(currChar == ')'){
-                if(openingBrackets == 0) return i;
-                else openingBrackets--;
-            }else throw new IllegalArgumentException("Input is not a bracket.");
+                openParenCnt++;
+            }else if(currChar == ')'){
+                if(openParenCnt == 0){
+                    return i;
+                }else{
+                    openParenCnt--;
+                }
+            }else{
+                throw new IllegalArgumentException("Character is not a parenthesis.");
+            }
         }
-
-        throw new IllegalArgumentException("Closing bracket not found.");
+        throw new IllegalArgumentException("Closing parenthesis not found.");
     }
 }
