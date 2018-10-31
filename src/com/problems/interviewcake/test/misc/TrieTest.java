@@ -1,6 +1,6 @@
-package com.problems.interviewcake.test.trees_graphs;
+package com.problems.interviewcake.test.misc;
 
-import com.problems.interviewcake.code.trees_graphs.Trie_Attempt;
+import com.problems.interviewcake.code.misc.Trie_Attempt;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

@@ -1,44 +1,47 @@
 package com.problems.interviewcake.code.misc;
 
 public class TempTracker_Attempt{
-    //mode
-    private int[] occurrences = new int[111];
-    private int mode;
-    private int maxOccurrence;
+    //min, max
+    private int minTemp = Integer.MAX_VALUE, maxTemp = Integer.MIN_VALUE;
 
     //mean
-    private int totalSum;
-    private int totalEntries;
+    private int totalTemps, sumTemps;
     private double mean;
 
-    //min & mode
-    private int minTemp = Integer.MAX_VALUE;
-    private int maxTemp = Integer.MIN_VALUE;
+    //mode
+    private int[] tempCounts = new int[101];
+    private int maxOccurrence = 0, mode = 0;
 
     public void insert(int temp){
-        //mode
-        occurrences[temp]++;
-        if(occurrences[temp] > maxOccurrence){
-            mode = temp;
-            maxOccurrence = occurrences[temp];
-        }
-        //mean
-        totalSum += temp;
-        totalEntries++;
-        mean = (double) totalSum/totalEntries;
-
-        //min and max
-        maxTemp = Math.max(temp, maxTemp);
         minTemp = Math.min(temp, minTemp);
+        maxTemp = Math.max(temp, maxTemp);
+
+        totalTemps++;
+        sumTemps += temp;
+        mean = sumTemps/totalTemps;
+
+        tempCounts[temp]++;
+        if(tempCounts[temp] > maxOccurrence){
+            maxOccurrence = tempCounts[temp];
+            mode = temp;
+        }
     }
 
-    public int getMode(){ return mode;}
+    public double getMean(){
+        return mean;
+    }
 
-    public double getMean(){ return mean;}
+    public int getMin(){
+        return minTemp;
+    }
 
-    public int getMax(){ return maxTemp;}
+    public int getMax(){
+        return maxTemp;
+    }
 
-    public int getMin(){ return minTemp;}
+    public int getMode(){
+        return mode;
+    }
 
 
 }

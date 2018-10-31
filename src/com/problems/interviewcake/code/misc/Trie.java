@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.trees_graphs;
+package com.problems.interviewcake.code.misc;
 
 import java.util.HashMap;
 

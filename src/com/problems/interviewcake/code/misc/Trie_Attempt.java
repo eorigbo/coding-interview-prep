@@ -1,20 +1,21 @@
-package com.problems.interviewcake.code.trees_graphs;
+package com.problems.interviewcake.code.misc;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Trie_Attempt{
+    //var nodeChildren, end_marker
     private Map<Character, Trie_Attempt> nodeChildren;
-    private final char END_OF_WORD_MARKER = '\0';
+    private final char end_marker = '\0';
 
+    //constructor
     public Trie_Attempt(){
         nodeChildren = new HashMap<>();
     }
 
     public boolean addWord(String word){
-        boolean isNewWord = false;
-
         Trie_Attempt currentNode = this;
+        boolean isNewWord = false;
 
         for(char currChar: word.toCharArray()){
             if(!currentNode.nodeChildren.containsKey(currChar)){
@@ -25,11 +26,10 @@ public class Trie_Attempt{
             currentNode = currentNode.nodeChildren.get(currChar);
         }
 
-        if(!currentNode.nodeChildren.containsKey(END_OF_WORD_MARKER)){
+        if(!currentNode.nodeChildren.containsKey(end_marker)){
             isNewWord = true;
-            currentNode.nodeChildren.put(END_OF_WORD_MARKER, new Trie_Attempt());
+            currentNode.nodeChildren.put(end_marker, new Trie_Attempt());
         }
         return isNewWord;
-
     }
 }

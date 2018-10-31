@@ -4,7 +4,7 @@ public class EggDrop {
     private static int quadraticSolver(int totalFloors){
         int a = 1, b = 1, c = -2 * totalFloors;
 
-        double discriminant = (b * b) - (4 * a * c);
+        int discriminant = (b * b) - (4 * a * c);
 
         double root1 = (- b + Math.sqrt(discriminant))/(2 * a);
         double root2 = (- b - Math.sqrt(discriminant))/(2 * a);
@@ -32,7 +32,6 @@ public class EggDrop {
         int stepsToMove = quadraticSolver(totalFloors);
         firstDrop += stepsToMove;
         int stepsCounter = 1;
-        boolean targetFound = false;
 
         if(targetFloor > totalFloors) throw new IllegalArgumentException("Target floor is greater than total floors");
 

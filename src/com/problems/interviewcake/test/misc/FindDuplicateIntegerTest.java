@@ -1,7 +1,7 @@
 package com.problems.interviewcake.test.misc;
 
 import org.junit.jupiter.api.Test;
-import static com.problems.interviewcake.code.misc.FindDuplicateInteger.findDuplicate;
+import static com.problems.interviewcake.code.misc.FindDuplicateInteger_Attempt.findDuplicate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FindDuplicateIntegerTest {
