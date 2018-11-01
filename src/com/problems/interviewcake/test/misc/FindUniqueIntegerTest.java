@@ -2,7 +2,7 @@ package com.problems.interviewcake.test.misc;
 
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.misc.FindUniqueInteger.findUnique;
+import static com.problems.interviewcake.code.misc.FindUniqueInteger_Attempt.findUnique;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FindUniqueIntegerTest {

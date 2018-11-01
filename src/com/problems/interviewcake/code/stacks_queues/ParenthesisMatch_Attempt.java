@@ -17,7 +17,7 @@ public class ParenthesisMatch_Attempt {
                     openParenCnt--;
                 }
             }else{
-                throw new IllegalArgumentException("Character is not a parenthesis.");
+                throw new IllegalArgumentException(String.format("Character %d is not a parenthesis.", i));
             }
         }
         throw new IllegalArgumentException("Closing parenthesis not found.");

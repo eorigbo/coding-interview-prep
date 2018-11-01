@@ -1,14 +1,13 @@
 package com.problems.interviewcake.code.linked_lists;
 
 public class DeleteNode_Attempt {
-    public static void deleteNode(LinkedListNode node){
-        LinkedListNode currentNode = node;
-
-        if(currentNode.next == null){
-            throw new IllegalArgumentException("Cannot delete the last node.");
+    public static void deleteNode(LinkedListNode midNode){
+        LinkedListNode currNode = midNode;
+        if(currNode.next != null){
+            currNode.value = currNode.next.value;
+            currNode.next = currNode.next.next;
         }else{
-            currentNode.value = currentNode.next.value;
-            currentNode.next = currentNode.next.next;
+            throw new IllegalArgumentException("Cannot delete the last element in a node.");
         }
     }
 }
