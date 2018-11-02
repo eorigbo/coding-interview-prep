@@ -4,13 +4,33 @@ import java.util.*;
 
 public class BracesBracketsParenthesesValidator_Attempt {
 
-    public static boolean isValid(String inputString){
-        if(inputString.length() == 1) throw new IllegalArgumentException("At least 2 elements are needed to make a pair.");
-        if(inputString.length() == 0) return true;
-        
-        Deque<Character> latestOpener = new ArrayDeque<>();
+    public static boolean isValid(String code){
+        Map<Character, Character> openClosePair = new HashMap<>();
+        openClosePair.put('(',')');
+        openClosePair.put('{','}');
+        openClosePair.put('[',']');
 
+        Set<Character> openers = new HashSet<>(openClosePair.keySet());
+        Set<Character> closers = new HashSet<>(openClosePair.values());
 
-        return latestOpener.isEmpty();
+        Deque<Character> openStack = new ArrayDeque<>();
+
+        for(char currChar: code.toCharArray()){
+            //if opener push to stack
+            if(openers.contains(currChar)){
+                openStack.push(currChar);
+            }
+
+            //if closer pop the last element from stack and get the associated closer from map. if it doesn't match currChar return false
+            if(closers.contains(currChar)){
+                if(!openStack.isEmpty()){
+                    char opener = openStack.pop();
+                    if(currChar != openClosePair.get(opener)) return false;
+                }else{
+                    return false;
+                }
+            }
+        }
+        return openStack.isEmpty();
     }
 }
