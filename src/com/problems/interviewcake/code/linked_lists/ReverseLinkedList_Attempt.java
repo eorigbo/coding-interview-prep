@@ -2,21 +2,19 @@ package com.problems.interviewcake.code.linked_lists;
 
 public class ReverseLinkedList_Attempt {
 
-    public static LinkedListNode reverse(LinkedListNode node){
-        LinkedListNode currentNode = node;
-        LinkedListNode nextNode = null;
+    public static LinkedListNode reverse(LinkedListNode rootNode){
+        LinkedListNode currNode = rootNode;
         LinkedListNode previousNode = null;
+        LinkedListNode nextNode = null;
 
-        while(currentNode != null){
-            nextNode = currentNode.next;
+        while(currNode != null){
+            nextNode = currNode.next;
 
-            currentNode.next = previousNode;
+            currNode.next = previousNode;
 
-            previousNode = currentNode;
-            currentNode = nextNode;
+            previousNode = currNode;
+            currNode = nextNode;
         }
-
         return previousNode;
-
     }
 }

@@ -1,17 +1,17 @@
 package com.problems.interviewcake.code.linked_lists;
 
 public class CyclicalLinkedListCheck_Attempt {
-    public static boolean containsCycle(LinkedListNode node){
+    public static boolean containsCycle(LinkedListNode rootNode){
+        LinkedListNode fastNode = rootNode;
+        LinkedListNode slowNode = rootNode;
 
-        LinkedListNode fastRunner = node;
-        LinkedListNode slowRunner = node;
+        while(fastNode != null && fastNode.next != null){
+            fastNode = fastNode.next.next;
+            slowNode = slowNode.next;
 
-        while(fastRunner != null && fastRunner.next!= null){
-            fastRunner = fastRunner.next.next;
-            slowRunner = slowRunner.next;
-
-            if(fastRunner == slowRunner) return true;
+            if(fastNode == slowNode) return true;
         }
+
         return false;
     }
 }

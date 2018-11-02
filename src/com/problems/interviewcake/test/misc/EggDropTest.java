@@ -3,7 +3,7 @@ package com.problems.interviewcake.test.misc;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.misc.EggDrop.getNumDrops;
+import static com.problems.interviewcake.code.misc.EggDrop_Attempt.getNumDrops;
 
 public class EggDropTest {
     @Test

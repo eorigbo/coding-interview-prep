@@ -4,28 +4,26 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class MaxStack_Attempt{
+    Deque<Integer> stack;
+    Deque<Integer> maxStack;
 
-        Deque<Integer> stack;
-        Deque<Integer> maxStack;
+    public MaxStack_Attempt(){
+        stack = new ArrayDeque<>();
+        maxStack = new ArrayDeque<>();
+    }
 
-        public MaxStack_Attempt(){
-            stack = new ArrayDeque<>();
-            maxStack = new ArrayDeque<>();
-        }
+    public void push(int item){
+        stack.push(item);
+        if(maxStack.isEmpty() || item >= maxStack.peek()) maxStack.push(item);
+    }
 
-        public void push(int n){
-            if(maxStack.isEmpty() || maxStack.peek() <= n) maxStack.push(n);
-            stack.push(n);
-        }
+    public int pop(){
+        int result = stack.pop();
+        if(result == maxStack.peek()) maxStack.pop();
+        return result;
+    }
 
-        public int pop(){
-            int popped = stack.pop();
-            if(popped == maxStack.peek()) maxStack.pop();
-            return popped;
-        }
-
-        public int getMax(){
-            return maxStack.peek();
-        }
-
+    public int getMax(){
+        return maxStack.peek();
+    }
 }

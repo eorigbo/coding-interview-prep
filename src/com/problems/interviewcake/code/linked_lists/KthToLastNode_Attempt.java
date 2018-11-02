@@ -1,24 +1,27 @@
 package com.problems.interviewcake.code.linked_lists;
 
 public class KthToLastNode_Attempt {
-    public static LinkedListNode kthToLastNode( int k, LinkedListNode head){
-        LinkedListNode aheadNode = head;
-        LinkedListNode behindNode = head;
+    public static LinkedListNode kthToLastNode(int k, LinkedListNode head){
+        LinkedListNode currNode = head;
 
-        //move aheadNode k - 1 times
-        for(int i = 1; i < k; i++){
-            if(aheadNode.next != null){
-                aheadNode = aheadNode.next;
-            }else{
-                throw new IllegalArgumentException("K is greater than array length");
-            }
+        if(k < 1) throw new IllegalArgumentException("K cannot be less than 1.");
+
+        //get listLength and subtract k
+        int cycleLength = 1;
+
+        while(currNode.next != null){
+            currNode = currNode.next;
+            cycleLength++;
         }
 
-        //keep moving until you get to the end of the list
-        while(aheadNode.next != null){
-            aheadNode = aheadNode.next;
-            behindNode = behindNode.next;
-        }
-        return behindNode;
+        if(k > cycleLength) throw new IllegalArgumentException("K cannot be greater than list length.");
+
+        int stepsToMove = cycleLength - k;
+
+        //move to that position
+        currNode = head;
+        for(int i = 1; i <= stepsToMove; i++) currNode = currNode.next;
+
+        return currNode;
     }
 }

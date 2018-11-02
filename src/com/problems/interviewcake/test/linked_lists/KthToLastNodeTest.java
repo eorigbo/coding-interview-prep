@@ -40,7 +40,9 @@ public class KthToLastNodeTest {
     public void kIsGreaterThanLinkedListLengthTest() {
         final LinkedListNode[] listNodes = valuesToLinkedListNodes(new int[] {1, 2, 3, 4});
         final int k = 5;
-        assertThrows(IllegalArgumentException.class,()->{kthToLastNode(k, listNodes[0]);});
+        assertThrows(IllegalArgumentException.class,()->{
+            kthToLastNode(k, listNodes[0]);
+        });
     }
 
     @Test
