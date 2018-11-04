@@ -3,7 +3,7 @@ package com.problems.ctci.ch1_arrays_strings.q1_unique_char_strings;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class UniqueCharStrings_Test {
+public class UniqueCharStringsTest {
     @Test
     public void smallWordTest(){
         final String word = "man";
