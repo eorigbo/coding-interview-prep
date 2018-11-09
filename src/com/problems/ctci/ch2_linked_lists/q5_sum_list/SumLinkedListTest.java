@@ -16,33 +16,12 @@ public class SumLinkedListTest {
         Assertions.assertTrue(expectedSum.equals(actualSum));
     }
 
-    @Test
-    public void listLengthTest(){
-        LinkedListNode[] nodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3});
-        int expectedLength = 3;
-        int actualLength = SumLinkedList.getListLength(nodeList[0]);
-
-        Assertions.assertEquals(expectedLength,actualLength);
-    }
-
-    @Test
+    /**@Test
     public void reverseTest(){
         LinkedListNode[] nodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3});
         String expectedList = "3->5->2";
         String actualList = SumLinkedList.reverse(nodeList[0]).printForward();
 
         Assertions.assertTrue(expectedList.equals(actualList));
-    }
-
-    @Test
-    public void padListTest(){
-        LinkedListNode[] firstNodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3});
-        LinkedListNode[] secondNodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3,6,7});
-        String expectedList = "2->5->3->0->0";
-        SumLinkedList.padList(firstNodeList[0], SumLinkedList.getListLength(secondNodeList[0]) - SumLinkedList.getListLength(firstNodeList[0]));
-        String actualList = firstNodeList[0].printForward();
-        Assertions.assertTrue(expectedList.equals(actualList));
-    }
-
-
+    }**/
 }
