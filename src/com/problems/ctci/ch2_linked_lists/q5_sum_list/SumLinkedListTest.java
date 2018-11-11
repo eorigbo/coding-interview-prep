@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class SumLinkedListTest {
     @Test
-    public void smallList(){
+    public void smallListTest(){
         LinkedListNode[] firstNodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3});
         LinkedListNode[] secondNodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{9,6});
 
@@ -16,12 +16,14 @@ public class SumLinkedListTest {
         Assertions.assertTrue(expectedSum.equals(actualSum));
     }
 
-    /**@Test
-    public void reverseTest(){
-        LinkedListNode[] nodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3});
-        String expectedList = "3->5->2";
-        String actualList = SumLinkedList.reverse(nodeList[0]).printForward();
+    @Test
+    public void largeListTest(){
+        LinkedListNode[] firstNodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{2,5,3,4,2});
+        LinkedListNode[] secondNodeList = LinkedListNode.valuesToLinkedListNodes(new int[]{9,6,2,3,7});
 
-        Assertions.assertTrue(expectedList.equals(actualList));
-    }**/
+        String expectedSum = "1->2->1->5->7->9";
+        String actualSum = SumLinkedList.sum(firstNodeList[0], secondNodeList[0]).printForward();
+
+        Assertions.assertTrue(expectedSum.equals(actualSum));
+    }
 }

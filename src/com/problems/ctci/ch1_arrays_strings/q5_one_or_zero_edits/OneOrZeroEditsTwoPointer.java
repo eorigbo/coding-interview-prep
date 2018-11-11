@@ -20,7 +20,7 @@ public class OneOrZeroEditsTwoPointer {
                 //check if edits are now more than 1
                 if(editsCounter > 1) return false;
 
-                //if string1 is longer, increment its index
+                //if string1 is longer, increment its index because it may be behind
                 if(str1Length > str2Length){
                     str1Idx++;
                 //if string2 is longer increment its index
