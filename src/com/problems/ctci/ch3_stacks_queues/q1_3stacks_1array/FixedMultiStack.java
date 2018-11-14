@@ -11,7 +11,7 @@ public class FixedMultiStack {
     public FixedMultiStack(int stackCapacity){
         this.stackCapacity = stackCapacity;
         stacksData = new int[stackCapacity * numStacks];
-        stacksCurrSize = new int[stackCapacity];
+        stacksCurrSize = new int[numStacks];
     }
 
     public void push(int stackNum, int value) throws FullStackException{

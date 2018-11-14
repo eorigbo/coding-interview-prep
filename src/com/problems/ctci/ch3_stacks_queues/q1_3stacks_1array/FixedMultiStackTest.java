@@ -9,12 +9,12 @@ import java.util.EmptyStackException;
 public class FixedMultiStackTest {
     @Test
     public void pushStack1Test() throws FullStackException {
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+        FixedMultiStack fixedMultiStack = new FixedMultiStack(4);
         fixedMultiStack.push(0,2);
         fixedMultiStack.push(0,4);
         fixedMultiStack.push(0,6);
 
-        int[] expectedResult = new int[]{2,4,6,0,0,0,0,0,0};
+        int[] expectedResult = new int[]{2,4,6,0,0,0,0,0,0,0,0,0};
         int[] actualResult = fixedMultiStack.getStackValues();
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
