@@ -9,7 +9,7 @@ public class ReplaceSpacesTest {
     public void smallSentence(){
         final char[] word = new char[]{'m','a','n',' ','u','p','\0',' ',' '};
         final char[] expectedWord = new char[]{'m','a','n','%','2','0','u','p','\0'};
-        final char[] actualWord = ReplaceSpaces.replaceSpaces(word);
+        final char[] actualWord = ReplaceSpacesAttempt.replaceSpaces(word);
 
         Assertions.assertArrayEquals(expectedWord, actualWord);
 
@@ -19,7 +19,7 @@ public class ReplaceSpacesTest {
     public void threeSpaces(){
         final char[] word = new char[]{' ',' ',' ','\0',' ',' ',' ', ' ', ' ', ' '};
         final char[] expectedWord = new char[]{'%','2','0','%','2','0','%','2','0','\0'};
-        final char[] actualWord = ReplaceSpaces.replaceSpaces(word);
+        final char[] actualWord = ReplaceSpacesAttempt.replaceSpaces(word);
 
         Assertions.assertArrayEquals(expectedWord, actualWord);
 
@@ -29,7 +29,7 @@ public class ReplaceSpacesTest {
     public void emptyArray(){
         final char[] empty = new char[3];
         final char[] expectedWord = empty;
-        final char[] actualWord = ReplaceSpaces.replaceSpaces(empty);
+        final char[] actualWord = ReplaceSpacesAttempt.replaceSpaces(empty);
 
         Assertions.assertArrayEquals(expectedWord, actualWord);
     }

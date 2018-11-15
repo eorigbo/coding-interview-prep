@@ -10,7 +10,7 @@ public class StringPermutationTest {
         final String string2 = "keba";
 
         boolean expected = true;
-        boolean actual = StringPermutation.isPermutation(string1, string2);
+        boolean actual = StringPermutationAttempt.isPermutation(string1, string2);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -21,7 +21,7 @@ public class StringPermutationTest {
         final String string2 = "keba";
 
         boolean expected = false;
-        boolean actual = StringPermutation.isPermutation(string1, string2);
+        boolean actual = StringPermutationAttempt.isPermutation(string1, string2);
 
         Assertions.assertEquals(expected, actual);
     }

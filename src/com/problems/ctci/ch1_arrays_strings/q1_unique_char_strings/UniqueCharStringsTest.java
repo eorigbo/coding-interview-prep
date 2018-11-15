@@ -8,7 +8,7 @@ public class UniqueCharStringsTest {
     public void smallWordTest(){
         final String word = "man";
         boolean expected = true;
-        boolean actual = UniqueCharStrings.hasUniqueChars(word);
+        boolean actual = UniqueCharStringsAttempt.hasUniqueChars(word);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -16,7 +16,7 @@ public class UniqueCharStringsTest {
     public void smallWordNotUniqueTest(){
         final String word = "naan";
         boolean expected = false;
-        boolean actual = UniqueCharStrings.hasUniqueChars(word);
+        boolean actual = UniqueCharStringsAttempt.hasUniqueChars(word);
         Assertions.assertEquals(expected, actual);
     }
 }
