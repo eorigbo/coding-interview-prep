@@ -3,7 +3,7 @@ package com.problems.ctci.ch1_arrays_strings.q5_one_or_zero_edits;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch1_arrays_strings.q5_one_or_zero_edits.OneOrZeroEditsTwoPointer.hasOneOrZeroEdits;
+import static com.problems.ctci.ch1_arrays_strings.q5_one_or_zero_edits.OneOrZeroEditsAttempt.hasOneOrZeroEdits;
 
 public class OneOrZeroEditsTest {
     @Test
