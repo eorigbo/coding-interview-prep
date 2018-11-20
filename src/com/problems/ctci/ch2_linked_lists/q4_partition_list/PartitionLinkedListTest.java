@@ -3,7 +3,7 @@ package com.problems.ctci.ch2_linked_lists.q4_partition_list;
 import com.problems.ctci.ch2_linked_lists.LinkedListNode;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch2_linked_lists.q4_partition_list.PartitionLinkedListStable.partition;
+import static com.problems.ctci.ch2_linked_lists.q4_partition_list.PartitionLinkedListAttempt.partition;
 
 public class PartitionLinkedListTest {
     @Test

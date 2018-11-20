@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.problems.ctci.ch2_linked_lists.LinkedListNode.valuesToLinkedListNodes;
-import static com.problems.ctci.ch2_linked_lists.q1_remove_dups_unsorted_list.RemoveDuplicatesUnsortedLinkedListLoops.deleteDups;
+import static com.problems.ctci.ch2_linked_lists.q1_remove_dups_unsorted_list.RemoveDuplicatesUnsortedLinkedListAttempt.deleteDups;
 
 public class RemoveDuplicatesUnsortedLinkedListTest {
     @Test

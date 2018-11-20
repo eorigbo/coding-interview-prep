@@ -4,6 +4,8 @@ import com.problems.ctci.ch2_linked_lists.LinkedListNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static com.problems.ctci.ch2_linked_lists.q7_intersection.FindIntersectionLinkedListsAttempt.findIntersection;
+
 public class FindIntersectionLinkedListsTest {
     @Test
     public void smallListTest(){
@@ -13,7 +15,7 @@ public class FindIntersectionLinkedListsTest {
         nodeList2[2].next   = nodeList1[2];
 
         int expectedValue = 3;
-        int actualValue = FindIntersectionLinkedLists.findIntersection(nodeList1[0],nodeList2[0]).value;
+        int actualValue = findIntersection(nodeList1[0],nodeList2[0]).value;
 
         Assertions.assertEquals(expectedValue, actualValue);
     }
@@ -24,7 +26,7 @@ public class FindIntersectionLinkedListsTest {
         LinkedListNode[] nodeList2 = LinkedListNode.valuesToLinkedListNodes(new int[]{6,7,8,3,8});
 
         LinkedListNode expectedNode = null;
-        LinkedListNode actualNode = FindIntersectionLinkedLists.findIntersection(nodeList1[0],nodeList2[0]);
+        LinkedListNode actualNode = findIntersection(nodeList1[0],nodeList2[0]);
 
         Assertions.assertNull(actualNode);
     }
@@ -37,7 +39,7 @@ public class FindIntersectionLinkedListsTest {
         nodeList2[2].next   = nodeList1[3];
 
         int expectedValue = 4;
-        int actualValue = FindIntersectionLinkedLists.findIntersection(nodeList1[0],nodeList2[0]).value;
+        int actualValue = findIntersection(nodeList1[0],nodeList2[0]).value;
 
         Assertions.assertEquals(expectedValue, actualValue);
     }
@@ -48,7 +50,7 @@ public class FindIntersectionLinkedListsTest {
         LinkedListNode[] nodeList2 = LinkedListNode.valuesToLinkedListNodes(new int[]{6});
 
         LinkedListNode expectedNode = null;
-        LinkedListNode actualNode = FindIntersectionLinkedLists.findIntersection(nodeList1[0],nodeList2[0]);
+        LinkedListNode actualNode = findIntersection(nodeList1[0],nodeList2[0]);
 
         Assertions.assertNull(actualNode);
     }
@@ -59,7 +61,7 @@ public class FindIntersectionLinkedListsTest {
         LinkedListNode nodeList2 = null;
 
         LinkedListNode expectedNode = null;
-        LinkedListNode actualNode = FindIntersectionLinkedLists.findIntersection(nodeList1[0],nodeList2);
+        LinkedListNode actualNode = findIntersection(nodeList1[0],nodeList2);
 
         Assertions.assertNull(actualNode);
     }
