@@ -18,7 +18,7 @@ public class SortStackTest {
 
         int[] expected = new int[]{2,3,4,5};
 
-        SortStack.sort(stack);
+        SortStackAttempt.sort(stack);
         int[] actual = stackToArray(stack);
 
         Assertions.assertArrayEquals(expected, actual);
@@ -31,7 +31,7 @@ public class SortStackTest {
 
         int[] expected = new int[]{4};
 
-        SortStack.sort(stack);
+        SortStackAttempt.sort(stack);
         int[] actual = stackToArray(stack);
 
         Assertions.assertArrayEquals(expected, actual);
@@ -41,7 +41,7 @@ public class SortStackTest {
     public void emptyStackTest(){
         Deque<Integer> stack = new ArrayDeque<>();
 
-        SortStack.sort(stack);
+        SortStackAttempt.sort(stack);
 
         Assertions.assertTrue(stack.isEmpty());
     }

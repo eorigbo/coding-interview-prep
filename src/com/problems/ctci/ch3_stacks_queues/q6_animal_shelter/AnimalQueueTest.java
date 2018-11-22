@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 public class AnimalQueueTest {
     @Test
     public void smallShelterTest(){
-        AnimalQueue animalQueue = new AnimalQueue();
-        animalQueue.enqueue(new Dog("Jack"));
-        animalQueue.enqueue(new Dog("Jill"));
-        animalQueue.enqueue(new Cat("White"));
-        animalQueue.enqueue(new Cat("Pink"));
+        AnimalQueueAttempt animalQueue = new AnimalQueueAttempt();
+        animalQueue.enqueue(new AnimalQueueAttempt.Dog("Jack"));
+        animalQueue.enqueue(new AnimalQueueAttempt.Dog("Jill"));
+        animalQueue.enqueue(new AnimalQueueAttempt.Cat("White"));
+        animalQueue.enqueue(new AnimalQueueAttempt.Cat("Pink"));
 
         String expectedName = "Dog: Jack";
         String actualName = animalQueue.peekAny().getName();

@@ -9,7 +9,7 @@ import java.util.Set;
 public class SetOfStacksTest {
     @Test
     public void pushOverFlowTest(){
-        SetOfStacks setOfStacks = new SetOfStacks(3);
+        SetOfStacksAttempt setOfStacks = new SetOfStacksAttempt(3);
         setOfStacks.push(3);
         setOfStacks.push(4);
         setOfStacks.push(5);
@@ -23,7 +23,7 @@ public class SetOfStacksTest {
 
     @Test
     public void popOverFlowTest(){
-        SetOfStacks setOfStacks = new SetOfStacks(2);
+        SetOfStacksAttempt setOfStacks = new SetOfStacksAttempt(2);
         setOfStacks.push(3);
         setOfStacks.push(4);
         setOfStacks.push(5);
@@ -45,7 +45,7 @@ public class SetOfStacksTest {
 
     @Test
     public void popEmptyStackTest(){
-        SetOfStacks setOfStacks = new SetOfStacks(2);
+        SetOfStacksAttempt setOfStacks = new SetOfStacksAttempt(2);
         Assertions.assertThrows(EmptyStackException.class,()->{
             setOfStacks.pop();
         });
@@ -53,7 +53,7 @@ public class SetOfStacksTest {
 
     @Test
     public void peekTest(){
-        SetOfStacks setOfStacks = new SetOfStacks(2);
+        SetOfStacksAttempt setOfStacks = new SetOfStacksAttempt(2);
         setOfStacks.push(13);
         setOfStacks.push(4);
 
@@ -65,7 +65,7 @@ public class SetOfStacksTest {
 
     @Test
     public void peekEmptyStackTest(){
-        SetOfStacks setOfStacks = new SetOfStacks(9);
+        SetOfStacksAttempt setOfStacks = new SetOfStacksAttempt(9);
         Assertions.assertThrows(EmptyStackException.class,()->{
             setOfStacks.peek();
         });

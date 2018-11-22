@@ -8,8 +8,8 @@ import java.util.EmptyStackException;
 
 public class FixedMultiStackTest {
     @Test
-    public void pushStack1Test() throws FullStackException {
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(4);
+    public void pushStack1Test() throws FixedMultiStackAttempt.FullStackException {
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(4);
         fixedMultiStack.push(0,2);
         fixedMultiStack.push(0,4);
         fixedMultiStack.push(0,6);
@@ -20,8 +20,8 @@ public class FixedMultiStackTest {
     }
 
     @Test
-    public void pushStack2Test()throws FullStackException{
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+    public void pushStack2Test()throws FixedMultiStackAttempt.FullStackException{
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         fixedMultiStack.push(1,2);
         fixedMultiStack.push(1,5);
         fixedMultiStack.push(1,8);
@@ -32,8 +32,8 @@ public class FixedMultiStackTest {
     }
 
     @Test
-    public void pushStack3Test()throws FullStackException{
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+    public void pushStack3Test()throws FixedMultiStackAttempt.FullStackException{
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         fixedMultiStack.push(2,3);
         fixedMultiStack.push(2,6);
         fixedMultiStack.push(2,9);
@@ -44,36 +44,36 @@ public class FixedMultiStackTest {
     }
 
     @Test
-    public void validateStackNumTest()throws FullStackException{
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+    public void validateStackNumTest()throws FixedMultiStackAttempt.FullStackException{
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         Assertions.assertThrows(IllegalArgumentException.class, ()->{
             fixedMultiStack.push(3,3);
         },String.format("stackNum can only be between 0 and %d.",fixedMultiStack.numStacks - 1));
     }
 
     @Test
-    public void fullStackExceptionTest()throws FullStackException{
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+    public void fullStackExceptionTest()throws FixedMultiStackAttempt.FullStackException{
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         fixedMultiStack.push(2,3);
         fixedMultiStack.push(2,6);
         fixedMultiStack.push(2,9);
 
-        Assertions.assertThrows(FullStackException.class,()->{
+        Assertions.assertThrows(FixedMultiStackAttempt.FullStackException.class,()->{
             fixedMultiStack.push(2,12);
         });
     }
 
     @Test
     public void emptyStackExceptionTest(){
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         Assertions.assertThrows(EmptyStackException.class,()->{
             fixedMultiStack.pop(1);
         });
     }
 
     @Test
-    public void popAndPushLastItemTest() throws FullStackException{
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+    public void popAndPushLastItemTest() throws FixedMultiStackAttempt.FullStackException{
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         fixedMultiStack.push(2,3);
         fixedMultiStack.push(2,6);
         fixedMultiStack.push(2,9);
@@ -87,8 +87,8 @@ public class FixedMultiStackTest {
     }
 
     @Test
-    public void popAndPeekTest()throws FullStackException{
-        FixedMultiStack fixedMultiStack = new FixedMultiStack(3);
+    public void popAndPeekTest()throws FixedMultiStackAttempt.FullStackException{
+        FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         fixedMultiStack.push(1,3);
         fixedMultiStack.push(1,6);
         fixedMultiStack.push(1,9);
