@@ -1,7 +1,8 @@
 package com.problems.ctci.ch4_trees_graphs.q3_list_of_node_depths;
 
 import com.problems.ctci.ch2_linked_lists.LinkedListNode;
-import com.problems.interviewcake.code.trees_graphs.BinaryTreeNode;
+import com.problems.ctci.ch4_trees_graphs.BinaryTreeNode;
+
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

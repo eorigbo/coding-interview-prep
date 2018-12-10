@@ -1,5 +1,8 @@
 package com.problems.ctci.ch4_trees_graphs;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTreeNode {
 
     public int value;
@@ -61,6 +64,36 @@ public class BinaryTreeNode {
 
     public static BinaryTreeNode createMinimalBST(int array[]) {
         return createMinimalBST(array, 0, array.length - 1);
+    }
+
+    public static BinaryTreeNode createTreeFromArray(int[] array) {
+        if (array.length > 0) {
+            BinaryTreeNode root = new BinaryTreeNode(array[0]);
+            Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
+            queue.add(root);
+            boolean done = false;
+            int i = 1;
+            while (!done) {
+                BinaryTreeNode r = (BinaryTreeNode) queue.element();
+                if (r.left == null) {
+                    r.left = new BinaryTreeNode(array[i]);
+                    i++;
+                    queue.add(r.left);
+                } else if (r.right == null) {
+                    r.right = new BinaryTreeNode(array[i]);
+                    i++;
+                    queue.add(r.right);
+                } else {
+                    queue.remove();
+                }
+                if (i == array.length) {
+                    done = true;
+                }
+            }
+            return root;
+        } else {
+            return null;
+        }
     }
 
 }
