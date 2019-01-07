@@ -1,4 +1,4 @@
-package com.problems.ctci.ch_10_sorting_searching.introduction;
+package com.problems.ctci.ch10_sorting_searching.introduction;
 
 public class QuickSort {
     public static void quickSort(int[] arr){

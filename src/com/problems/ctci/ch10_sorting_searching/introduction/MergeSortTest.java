@@ -1,17 +1,17 @@
-package com.problems.ctci.ch_10_sorting_searching.introduction;
+package com.problems.ctci.ch10_sorting_searching.introduction;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch_10_sorting_searching.introduction.QuickSort.quickSort;
+import static com.problems.ctci.ch10_sorting_searching.introduction.MergeSort.mergeSort;
 
-public class QuickSortTest {
+public class MergeSortTest {
     @Test
     public void medListTest(){
-        int[] actualInts = {2,7,1,19,6,4,5};
+        int[] actualInts = {2,7,1,19,6,4,5,22,27,25};
 
-        int[] expectedInts = {1,2,4,5,6,7,19};
-        quickSort(actualInts);
+        int[] expectedInts = {1,2,4,5,6,7,19,22,25,27};
+        mergeSort(actualInts);
 
         Assertions.assertArrayEquals(actualInts, expectedInts);
     }
@@ -21,7 +21,7 @@ public class QuickSortTest {
         int[] actualInts = {5,12,4,13,6};
 
         int[] expectedInts = {4,5,6,12,13};
-        quickSort(actualInts);
+        mergeSort(actualInts);
 
         Assertions.assertArrayEquals(expectedInts, actualInts);
     }
@@ -31,7 +31,7 @@ public class QuickSortTest {
         int[] actualInts = {6,7,8,9,10};
 
         int[] expectedInts = {6,7,8,9,10};
-        quickSort(actualInts);
+        mergeSort(actualInts);
 
         Assertions.assertArrayEquals(expectedInts, actualInts);
     }

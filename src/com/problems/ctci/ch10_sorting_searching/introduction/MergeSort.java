@@ -1,4 +1,4 @@
-package com.problems.ctci.ch_10_sorting_searching.introduction;
+package com.problems.ctci.ch10_sorting_searching.introduction;
 
 public class MergeSort {
     public static void mergeSort(int[] arr) {
