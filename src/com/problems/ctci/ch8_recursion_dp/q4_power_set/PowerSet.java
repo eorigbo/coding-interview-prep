@@ -4,24 +4,22 @@ import java.util.ArrayList;
 
 public class PowerSet {
 
-    public static ArrayList<Integer> convertIntToSet(int parentIndex, ArrayList<Integer> set) {
-        ArrayList<Integer> subset = new ArrayList<Integer>();
-        int setIdx = 0;
-        for (int i = parentIndex; i > 0; i >>= 1) {
-            if ((i & 1) == 1) {
-                subset.add(set.get(setIdx));
+    public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> inputSet, int index) {
+        ArrayList<ArrayList<Integer>> allSubsets;
+        if (inputSet.size() == index) { // Base case - add empty set
+            allSubsets = new ArrayList<ArrayList<Integer>>();
+            allSubsets.add(new ArrayList<Integer>());
+        } else {
+            allSubsets = getSubsets(inputSet, index + 1);
+            int item = inputSet.get(index);
+            ArrayList<ArrayList<Integer>> moreSubsets = new ArrayList<>();
+            for (ArrayList<Integer> subset : allSubsets) {
+                ArrayList<Integer> newSubset = new ArrayList<>();
+                newSubset.addAll(subset);
+                newSubset.add(item);
+                moreSubsets.add(newSubset);
             }
-            setIdx++;
-        }
-        return subset;
-    }
-
-    public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set) {
-        ArrayList<ArrayList<Integer>> allSubsets = new ArrayList<ArrayList<Integer>>();
-        int max = 1 << set.size(); /* Compute 2^n */
-        for (int i = 0; i < max; i++) {
-            ArrayList<Integer> subset = convertIntToSet(i, set);
-            allSubsets.add(subset);
+            allSubsets.addAll(moreSubsets);
         }
         return allSubsets;
     }

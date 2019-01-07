@@ -17,9 +17,8 @@ public class MagicIndexElementsNotDistinct {
         /* Search left */
         int leftIndex = Math.min(midIndex - 1, midValue);
         int left = getMagicIndex(array, start, leftIndex);
-        if (left >= 0) {
-            return left;
-        }
+        if (left >= 0) return left;
+
 
         /* Search right */
         int rightIndex = Math.max(midIndex + 1, midValue);
