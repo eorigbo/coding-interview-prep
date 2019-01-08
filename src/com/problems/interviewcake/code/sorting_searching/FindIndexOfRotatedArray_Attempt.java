@@ -8,19 +8,28 @@ public class FindIndexOfRotatedArray_Attempt {
         String firstWord = arr[0];
 
         if(arr[arr.length - 1].compareTo(firstWord) >= 0) return 0;
+
         int floor = 0;
         int ceiling = arr.length-1;
+        int targetIdx = -1;
 
-        while(floor < ceiling){
+        while(true){
             //cal midpoint and compare to firstWord, if > 0 move floor to midpoint
             int mid = (ceiling - floor)/2 + floor;
-            if(arr[mid].compareTo(firstWord) >= 0) floor = mid;
-            else ceiling = mid;
 
-            //if floor + 1 == ceiling return ceiling
-            if(floor + 1 == ceiling) break;
+            if(arr[mid].compareTo(arr[mid+1]) >= 0){
+                targetIdx = mid + 1;
+                break;
+            }else{
+                if(arr[floor].compareTo(arr[mid]) >= 0){
+                    ceiling = mid - 1;
+                }else{
+                    floor = mid + 1;
+                }
+            }
+
         }
-        return ceiling;
+        return targetIdx;
     }
 
 }
