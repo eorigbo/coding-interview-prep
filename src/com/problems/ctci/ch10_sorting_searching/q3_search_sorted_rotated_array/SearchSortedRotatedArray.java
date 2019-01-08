@@ -15,7 +15,6 @@ public class SearchSortedRotatedArray {
         }else{
             targetIdx = binarySearch(arr, target, -1, pivotIdx );
         }
-
         return targetIdx;
     }
 
