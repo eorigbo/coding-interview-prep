@@ -11,9 +11,9 @@ public class SearchSortedRotatedArray {
         if(target == arr[pivotIdx]) {
             targetIdx = pivotIdx;
         }else if(target > arr[pivotIdx] && target <= arr[arr.length - 1]){
-            targetIdx = binarySearch(arr, target, pivotIdx, arr.length);
+            targetIdx = binarySearch(arr, target, pivotIdx + 1, arr.length - 1);
         }else{
-            targetIdx = binarySearch(arr, target, -1, pivotIdx );
+            targetIdx = binarySearch(arr, target, 0, pivotIdx - 1);
         }
         return targetIdx;
     }
@@ -52,7 +52,7 @@ public class SearchSortedRotatedArray {
 
     public static int binarySearch(int[] arr, int target, int floorIdx, int ceilingIdx){
 
-        while(floorIdx + 1  < ceilingIdx){
+        while(floorIdx <= ceilingIdx){
             int mid = ((ceilingIdx - floorIdx)/2) + floorIdx;
 
             if(arr[mid] == target){
@@ -60,9 +60,9 @@ public class SearchSortedRotatedArray {
             }
 
             if (arr[mid] > target){
-                ceilingIdx = mid;
+                ceilingIdx = mid - 1;
             }else{
-                floorIdx = mid;
+                floorIdx = mid + 1;
             }
         }
         return -1;

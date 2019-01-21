@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.problems.ctci.ch4_trees_graphs.q2_create_bst.CreateMinHeightBST.createMinimalBST;
-import static com.problems.ctci.ch4_trees_graphs.q6_inorder_successor.InOrderSuccessorBST.inOrderSuccessor;
+import static com.problems.ctci.ch4_trees_graphs.q6_inorder_successor.InOrderSuccessorBSTAttempt.inOrderSuccessor;
 
 public class InOrderSuccessorBSTTest {
     @Test
@@ -47,6 +47,17 @@ public class InOrderSuccessorBSTTest {
         BinaryTreeNode rootNode = createMinimalBST(array);
         int expectedValue = 5;
         int actualValue = inOrderSuccessor(rootNode, 4).value;
+
+        Assertions.assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    public void rootNodeSuccessorTest(){
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        BinaryTreeNode rootNode = createMinimalBST(array);
+        int expectedValue = 6;
+        int actualValue = inOrderSuccessor(rootNode, 5).value;
 
         Assertions.assertEquals(expectedValue, actualValue);
     }

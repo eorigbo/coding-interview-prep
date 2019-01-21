@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static com.problems.ctci.ch4_trees_graphs.q3_list_of_node_depths.CreateLevelLinkedLists.createLevelLinkedLists;
+import static com.problems.ctci.ch4_trees_graphs.q3_list_of_node_depths.CreateLevelLinkedListsAttempt.createLevelLinkedLists;
 
 public class CreateLevelLinkedListsTest {
     @Test
@@ -24,6 +24,11 @@ public class CreateLevelLinkedListsTest {
 
         int expectedValue = 8;
         int actualValue = resultList.get(resultList.size()-1).value;
+
+        Assertions.assertEquals(expectedValue, actualValue);
+
+        expectedValue = 10;
+        actualValue = resultList.get(resultList.size()-1).next.next.value;
 
         Assertions.assertEquals(expectedValue, actualValue);
     }

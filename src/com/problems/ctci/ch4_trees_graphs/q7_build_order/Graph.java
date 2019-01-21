@@ -14,11 +14,11 @@ public class Graph {
         return projectsGraph.get(projectName);
     }
 
-    public void addDependency(String startName, String endName) {
-        Project start = getProject(startName);
-        Project end = getProject(endName);
-        start.addChild(end);
-        end.incrementDependencies();
+    public void addDependency(String parentName, String childName) {
+        Project parent = getProject(parentName);
+        Project child = getProject(childName);
+        parent.addChild(child);
+        child.incrementDependencies();
     }
 
     public ArrayList<Project> getProjects() {

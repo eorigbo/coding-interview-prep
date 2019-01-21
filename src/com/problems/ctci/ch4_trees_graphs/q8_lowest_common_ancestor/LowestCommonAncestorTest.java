@@ -4,7 +4,7 @@ import com.problems.ctci.ch4_trees_graphs.BinaryTreeNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch4_trees_graphs.q8_lowest_common_ancestor.LowestCommonAncestor.lowestCommonAncestor;
+import static com.problems.ctci.ch4_trees_graphs.q8_lowest_common_ancestor.LowestCommonAncestorAttempt.lowestCommonAncestor;
 
 public class LowestCommonAncestorTest {
     @Test

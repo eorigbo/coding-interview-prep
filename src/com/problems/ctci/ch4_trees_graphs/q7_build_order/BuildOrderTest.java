@@ -3,7 +3,7 @@ package com.problems.ctci.ch4_trees_graphs.q7_build_order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch4_trees_graphs.q7_build_order.BuildOrder.buildOrderWrapper;
+import static com.problems.ctci.ch4_trees_graphs.q7_build_order.BuildOrderAttempt.buildOrderWrapper;
 
 public class BuildOrderTest {
 
@@ -11,6 +11,7 @@ public class BuildOrderTest {
      public void smallListTest() {
          String[] projects = {"a", "b", "c", "d", "e", "f"};
          String[][] dependencies = {
+         //element 1 has to be completed before 2 can be started
          {"a", "d"},
          {"f", "b"},
          {"b", "d"},

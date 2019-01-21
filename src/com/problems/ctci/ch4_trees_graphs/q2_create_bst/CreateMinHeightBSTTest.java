@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.problems.ctci.ch4_trees_graphs.introduction.IterativeTraversals.inOrderTraversal;
-import static com.problems.ctci.ch4_trees_graphs.q2_create_bst.CreateMinHeightBST.createMinimalBST;
+import static com.problems.ctci.ch4_trees_graphs.q2_create_bst.CreateMinHeightBSTAttempt.*;
 
 public class CreateMinHeightBSTTest {
     @Test

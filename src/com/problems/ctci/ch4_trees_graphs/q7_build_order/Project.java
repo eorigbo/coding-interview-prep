@@ -3,7 +3,7 @@ package com.problems.ctci.ch4_trees_graphs.q7_build_order;
 import java.util.*;
 
 public class Project {
-    private ArrayList<Project> children = new ArrayList<>();
+    private List<Project> children = new ArrayList<>();
     private String name;
     private int dependencyCount = 0;
 
@@ -21,7 +21,7 @@ public class Project {
         dependencyCount++;
     }
 
-    public ArrayList<Project> getChildren() {
+    public List<Project> getChildren() {
         return children;
     }
 

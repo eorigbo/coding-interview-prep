@@ -4,7 +4,7 @@ import com.problems.ctci.ch4_trees_graphs.BinaryTreeNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch4_trees_graphs.introduction.IterativeTraversals.*;
+import static com.problems.ctci.ch4_trees_graphs.introduction.IterativeTraversalsAttempt.*;
 
 public class IterativeTraversalsTest {
     @Test
@@ -37,5 +37,20 @@ public class IterativeTraversalsTest {
         int[] actualResult = preOrderTraversal(rootNode);
 
         Assertions.assertArrayEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void nullNodeTest(){
+        BinaryTreeNode rootNode = null;
+        int[] expectedResult = null;
+        int[] actualResult = inOrderTraversal(rootNode);
+
+        Assertions.assertArrayEquals(expectedResult, actualResult);
+
+        actualResult = preOrderTraversal(rootNode);
+        Assertions.assertArrayEquals(expectedResult, actualResult);
+
+        actualResult = postOrderTraversal(rootNode);
+        Assertions.assertArrayEquals(expectedResult, actualResult);
     }
 }

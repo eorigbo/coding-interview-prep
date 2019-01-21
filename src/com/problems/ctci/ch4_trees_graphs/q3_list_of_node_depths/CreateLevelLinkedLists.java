@@ -24,7 +24,7 @@ public class CreateLevelLinkedLists {
             if(depth == resultList.size()){
                 resultList.add(new LinkedListNode(currNode.value));
             }else{
-                resultList.get(depth).next = new LinkedListNode(currNode.value);
+                LinkedListNode.appendToList(resultList.get(depth),currNode.value);
             }
 
             if(currNode.left != null) nodeDepths.add(new NodeDepthPair(currNode.left,depth + 1));
