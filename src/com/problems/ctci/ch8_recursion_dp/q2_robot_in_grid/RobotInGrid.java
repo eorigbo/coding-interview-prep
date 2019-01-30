@@ -18,12 +18,14 @@ public class RobotInGrid {
     }
 
     public static boolean getPath(boolean[][] maze, int row, int col, ArrayList<Point> path, HashSet<Point> failedPoints) {
-        /* If out of bounds or not available, return.*/
+        /* If out of bounds or row value is false, return.*/
         if (col < 0 || row < 0 || !maze[row][col]) return false;
 
         Point point = new Point(row, col);
 
-        /* If we've already visited this cell, return. */
+        /* If we've already visited this cell, return.
+        * We override the hashCode method, so the
+        * contains method can compare correctly*/
         if (failedPoints.contains(point)) { return false; }
 
         boolean isAtOrigin = (row == 0) && (col == 0);

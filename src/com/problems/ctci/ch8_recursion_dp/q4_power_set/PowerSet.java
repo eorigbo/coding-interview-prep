@@ -10,13 +10,21 @@ public class PowerSet {
             allSubsets = new ArrayList<ArrayList<Integer>>();
             allSubsets.add(new ArrayList<Integer>());
         } else {
+            //recursive call that takes you to the last index and triggers base case
             allSubsets = getSubsets(inputSet, index + 1);
-            int item = inputSet.get(index);
+
+            int currItem = inputSet.get(index);
+
+            //initialize temporary store for new subsets
             ArrayList<ArrayList<Integer>> moreSubsets = new ArrayList<>();
-            for (ArrayList<Integer> subset : allSubsets) {
+
+            /**for each subset in AllSubsets, add the current item and store
+             * new subset in temporary store, then add all elements of the temp store
+             * to allSubsets*/
+            for (ArrayList<Integer> currSubset : allSubsets) {
                 ArrayList<Integer> newSubset = new ArrayList<>();
-                newSubset.addAll(subset);
-                newSubset.add(item);
+                newSubset.addAll(currSubset);
+                newSubset.add(currItem);
                 moreSubsets.add(newSubset);
             }
             allSubsets.addAll(moreSubsets);
