@@ -7,9 +7,9 @@ public class KthToLastNode_Attempt {
         if(k < 1) throw new IllegalArgumentException("K cannot be less than 1.");
 
         //get listLength and subtract k
-        int cycleLength = 1;
+        int cycleLength = 0;
 
-        while(currNode.next != null){
+        while(currNode != null){
             currNode = currNode.next;
             cycleLength++;
         }

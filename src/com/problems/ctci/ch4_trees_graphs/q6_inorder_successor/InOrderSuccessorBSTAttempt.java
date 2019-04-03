@@ -9,6 +9,8 @@ public class InOrderSuccessorBSTAttempt {
         BinaryTreeNode currNode = rootNode;
 
         //while left and right nodes are not null or currNode = targetValue
+        // reason for currNode = targetValue is to address the edge case where
+        // the node = targetValue is a leaf node. We still want to run the loop there
         while(currNode.left != null || currNode.right != null || currNode.value == targetValue){
             //if currNode value > targetValue go left
             if(currNode.value > targetValue){
@@ -18,7 +20,8 @@ public class InOrderSuccessorBSTAttempt {
                 currNode = currNode.right;
                 //else
             }else{
-                //if currNode.right is not null
+                // Scenario 1: If currNode.right is not null then go right
+                // and return the leftmost node as the inorder successor
                 if(currNode.right != null){
                     //currNode = currNode.right and return leftmost node
                     currNode = currNode.right;
@@ -28,6 +31,10 @@ public class InOrderSuccessorBSTAttempt {
                     return currNode;
                     //else
                 }else{
+                    //Scenario 2: If currentNode.right is null
+                    // a. Go back to root and find the node with targetValue
+                    // b. Return the last node from which you went left as the inorder successor
+
                     //initialize tempNode and set currNode to rootNode
                     BinaryTreeNode tempNode = null;
                     currNode = rootNode;

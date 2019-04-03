@@ -20,13 +20,16 @@ public class FixedMultiStackTest {
     }
 
     @Test
-    public void pushStack2Test()throws FixedMultiStackAttempt.FullStackException{
+    public void pushStack1And2Test()throws FixedMultiStackAttempt.FullStackException{
         FixedMultiStackAttempt fixedMultiStack = new FixedMultiStackAttempt(3);
         fixedMultiStack.push(1,2);
         fixedMultiStack.push(1,5);
         fixedMultiStack.push(1,8);
+        fixedMultiStack.push(0,7);
+        fixedMultiStack.push(0,11);
+        fixedMultiStack.push(0,16);
 
-        int[] expectedResult = new int[]{0,0,0,2,5,8,0,0,0};
+        int[] expectedResult = new int[]{7,11,16,2,5,8,0,0,0};
         int[] actualResult = fixedMultiStack.getStackValues();
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }

@@ -11,7 +11,7 @@ public class CompressStringsAttempt {
             charCounter++;
 
             //if i+1 >= strLength, or charAt i != one in front
-            if(i+1 >= theString.length() || theString.charAt(i) != theString.charAt(i+1)){
+            if(i+1 == theString.length() || theString.charAt(i) != theString.charAt(i+1)){
                 //append char and charCounter to compressedString
                 compressedString.append(theString.charAt(i));
                 compressedString.append(charCounter);

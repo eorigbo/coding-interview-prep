@@ -19,7 +19,7 @@ public class BracesBracketsParenthesesValidator {
                 openersStack.push(c);
             }else if(closers.contains(c)){
                 if(openersStack.isEmpty()){
-                    return false;
+                    return false; // this means we saw a closer before seeing any opener which is invalid
                 }else{
                     char lastOpener = openersStack.pop();
 

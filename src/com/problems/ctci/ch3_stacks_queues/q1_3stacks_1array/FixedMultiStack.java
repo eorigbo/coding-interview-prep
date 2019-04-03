@@ -5,8 +5,8 @@ import java.util.EmptyStackException;
 public class FixedMultiStack {
     public final int numStacks = 3;
     private int stackCapacity;
-    private int[] stacksCurrSize;
-    private int[] stacksData;
+    private int[] stacksCurrSize; //number of elements in that stack
+    private int[] stacksData; // actual array containing the 3 stacks
 
     public FixedMultiStack(int stackCapacity){
         this.stackCapacity = stackCapacity;

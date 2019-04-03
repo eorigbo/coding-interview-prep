@@ -12,21 +12,13 @@ public class Meetings{
         //make a copy of the List.
         List<Meeting> sortedMeetings = new ArrayList<>();
 
-        for(Meeting meeting: meetings){
-
-            Meeting meetingCopy = new Meeting(meeting.getStartTime(),meeting.getEndTime());
-            sortedMeetings.add(meetingCopy);
-
-        }
+        sortedMeetings.addAll(meetings);
 
         //sort the copied List
-        Collections.sort(sortedMeetings, new Comparator<Meeting>(){
-            @Override
+        sortedMeetings.sort(new Comparator<Meeting>(){
             public int compare(Meeting m1, Meeting m2){
                 return m1.getStartTime() - m2.getStartTime();
             }
-
-
         });
 
         //merge meetings where endTime of previous meeting >= startTime of current meeting

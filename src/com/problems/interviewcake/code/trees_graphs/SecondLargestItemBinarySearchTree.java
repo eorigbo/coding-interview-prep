@@ -18,9 +18,16 @@ public class SecondLargestItemBinarySearchTree {
         BinaryTreeNode current = rootNode;
 
         while(true){
+            // Scenario 1: If the rightmost node has a left node, return the largest
+            // element of the left node.
             if(current.left != null && current.right == null) return findLargest(current.left);
-            if(current.right != null && current.right.left == null
+
+            // Scenario 2: If we are in the second to the rightmost node, return it
+            // as the second to largest element of the BST
+            if(current.right != null
+                    && current.right.left == null
                     && current.right.right == null) return current.value;
+
             current = current.right;
 
         }

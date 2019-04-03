@@ -8,29 +8,27 @@ public class SubarraySum
     {
         int curr_sum = arr[0], start = 0, i, arrayLength = arr.length;
 
-        // Pick a starting point
-        for (i = 1; i <= arrayLength; i++)
-        {
+        // Pick a starting point, and remember that loop starts at 1
+        // Also remember that loop runs as long as i <= arrayLength
+        for (i = 1; i <= arrayLength; i++){
             // If curr_sum exceeds the sum, then remove the starting elements
-            while (curr_sum > sum && start < i-1)
-            {
+            // make sure incrementing start is safe (start < i-1)
+            while (curr_sum > sum && start < i-1){
                 curr_sum = curr_sum - arr[start];
                 start++;
             }
 
             // If curr_sum becomes equal to sum, then return true
-            if (curr_sum == sum)
-            {
+            if (curr_sum == sum){
                 int subarrayLastIndex = i-1;
                 System.out.println("Sum found between indexes " + start
                         + " and " + subarrayLastIndex);
                 return true;
             }
 
-            // Add this element to curr_sum
-            if (i < arrayLength)
-                curr_sum = curr_sum + arr[i];
-
+            // Add this element to curr_sum but check to make sure
+            // OutOfBoundException is not thrown
+            if (i < arrayLength) curr_sum = curr_sum + arr[i];
         }
 
         System.out.println("No subarray found");
