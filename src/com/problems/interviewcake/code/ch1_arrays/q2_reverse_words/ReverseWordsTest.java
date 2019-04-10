@@ -1,9 +1,9 @@
-package com.problems.interviewcake.test.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q2_reverse_words;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.ReverseWords_Attempt.reverseWords;
+import static com.problems.interviewcake.code.ch1_arrays.q2_reverse_words.ReverseWords_Attempt.reverseWords;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ReverseWordsTest {

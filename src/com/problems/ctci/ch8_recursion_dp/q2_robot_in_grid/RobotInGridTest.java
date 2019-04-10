@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.problems.ctci.ch8_recursion_dp.q2_robot_in_grid.RobotInGrid.getPath;
+import static com.problems.ctci.ch8_recursion_dp.q2_robot_in_grid.RobotInGridAttempt.getPath;
 
 public class RobotInGridTest {
     @Test

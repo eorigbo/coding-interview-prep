@@ -1,14 +1,13 @@
-package com.problems.interviewcake.test.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q1_merge_meeting_times;
 
-import com.problems.interviewcake.code.arrays.Meeting;
-import org.junit.jupiter.api.Assertions;
+import com.problems.interviewcake.code.ch1_arrays.q1_merge_meeting_times.Meeting;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.problems.interviewcake.code.arrays.Meetings_Attempt.*;
+import static com.problems.interviewcake.code.ch1_arrays.q1_merge_meeting_times.Meetings_Attempt.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MeetingsTest {

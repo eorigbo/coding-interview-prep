@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q5_remove_duplicates_sorted_array;
 
 public class RemoveDuplicatesFromSortedArray {
     public static int removeDuplicates(int[] sortedArray){

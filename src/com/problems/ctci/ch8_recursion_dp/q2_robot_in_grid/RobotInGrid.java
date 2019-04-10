@@ -24,8 +24,8 @@ public class RobotInGrid {
         Point point = new Point(row, col);
 
         /* If we've already visited this cell, return.
-        * We override the hashCode method, so the
-        * contains method can compare correctly*/
+        * We override the hashCode method in the Point class, so the
+        * contains method can compare points correctly*/
         if (failedPoints.contains(point)) { return false; }
 
         boolean isAtOrigin = (row == 0) && (col == 0);

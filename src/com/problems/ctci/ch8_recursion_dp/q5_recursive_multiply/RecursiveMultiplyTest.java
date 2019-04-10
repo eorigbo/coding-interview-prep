@@ -3,7 +3,7 @@ package com.problems.ctci.ch8_recursion_dp.q5_recursive_multiply;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch8_recursion_dp.q5_recursive_multiply.IterativeMultiply.multiply;
+import static com.problems.ctci.ch8_recursion_dp.q5_recursive_multiply.IterativeMultiplyAttempt.multiply;
 
 public class RecursiveMultiplyTest {
     @Test

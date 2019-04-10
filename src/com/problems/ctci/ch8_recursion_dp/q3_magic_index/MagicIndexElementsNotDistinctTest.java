@@ -3,7 +3,7 @@ package com.problems.ctci.ch8_recursion_dp.q3_magic_index;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.ctci.ch8_recursion_dp.q3_magic_index.MagicIndexElementsNotDistinct.getMagicIndex;
+import static com.problems.ctci.ch8_recursion_dp.q3_magic_index.MagicIndexElementsNotDistinctAttempt.getMagicIndex;
 
 public class MagicIndexElementsNotDistinctTest {
     @Test
@@ -65,5 +65,7 @@ public class MagicIndexElementsNotDistinctTest {
 
         Assertions.assertEquals(expectedValue, actualValue);
     }
+
+
 
 }

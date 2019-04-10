@@ -1,9 +1,9 @@
-package com.problems.interviewcake.test.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q3_merge_sorted_arrays;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.MergeSortedArrays_Attempt.mergeArrays;
+import static com.problems.interviewcake.code.ch1_arrays.q3_merge_sorted_arrays.MergeSortedArrays_Attempt.mergeArrays;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class MergeSortedArraysTest {

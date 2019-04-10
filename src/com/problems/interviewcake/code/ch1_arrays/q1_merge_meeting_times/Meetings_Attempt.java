@@ -1,7 +1,6 @@
-package com.problems.interviewcake.code.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q1_merge_meeting_times;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 

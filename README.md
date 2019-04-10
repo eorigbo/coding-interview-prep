@@ -5,7 +5,7 @@ My plan is to update this read me doc with the topics I've covered, and question
 
 ----------------------------
 ### 1. Arrays
-Solutions to array questions can be found in the package **com.problems.interviewcake.code.arrays**. Test cases can be found in the package **com.problems.interviewcake.test.arrays**. Test cases share the same name as the solution files, with Test added at the end. Array questions in my repo include:
+Solutions to array questions can be found in the package **com.problems.interviewcake.code.ch1_arrays**. Test cases can be found in the package **com.problems.interviewcake.test.arrays**. Test cases share the same name as the solution files, with Test added at the end. Array questions in my repo include:
 
 **1\. Merging Meeting Times:** Write a function for merging meeting times given everyone's schedules.
 

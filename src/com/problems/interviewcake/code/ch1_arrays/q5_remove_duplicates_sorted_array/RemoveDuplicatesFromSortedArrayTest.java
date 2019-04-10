@@ -1,9 +1,9 @@
-package com.problems.interviewcake.test.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q5_remove_duplicates_sorted_array;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.RemoveDuplicatesFromSortedArray_Attempt.removeDuplicates;
+import static com.problems.interviewcake.code.ch1_arrays.q5_remove_duplicates_sorted_array.RemoveDuplicatesFromSortedArray_Attempt.removeDuplicates;
 
 public class RemoveDuplicatesFromSortedArrayTest {
 

@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q3_merge_sorted_arrays;
 
 public class MergeSortedArrays_Attempt{
 

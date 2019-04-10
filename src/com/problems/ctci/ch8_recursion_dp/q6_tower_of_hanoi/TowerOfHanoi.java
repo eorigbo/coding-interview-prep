@@ -10,18 +10,20 @@ public class TowerOfHanoi {
     2. A disk can only be moved if it is the uppermost on a stack.
     3. No disk may be placed on top of a smaller disk. */
 
-    public static ArrayList<String> towerOfHanoi(int numDisks, char fromPole, char toPole, char auxPole){
+    public static List<String> towerOfHanoi(int numDisks, char fromPole, char toPole, char auxPole){
         if(numDisks == 0) throw new IllegalArgumentException("No disks to move.");
 
         //This is purely for testing purposes
         //We are storing the outputted strings instead of
         //printing to console
-        ArrayList<String> steps = new ArrayList<>();
+        List<String> steps = new ArrayList<>();
 
+        //Base case: Only 1 disk is to be moved.
         if (numDisks == 1){
             steps.add("Disk 1 moved from " +  fromPole + " to " + toPole);
             return steps;
         }
+
         //Source: fromPole; destination: auxPole; cache: toPole
         steps.addAll(towerOfHanoi(numDisks-1, fromPole, auxPole, toPole));
 

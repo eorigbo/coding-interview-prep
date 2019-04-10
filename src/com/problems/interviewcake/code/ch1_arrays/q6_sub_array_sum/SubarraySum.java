@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q6_sub_array_sum;
 
 public class SubarraySum
 {

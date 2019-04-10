@@ -1,9 +1,9 @@
-package com.problems.interviewcake.test.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q4_check_single_riffle_shuffle;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.CheckSingleRiffle_Attempt.isSingleRiffle;
+import static com.problems.interviewcake.code.ch1_arrays.q4_check_single_riffle_shuffle.CheckSingleRiffle_Attempt.isSingleRiffle;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

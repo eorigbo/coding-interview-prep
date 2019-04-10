@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q1_merge_meeting_times;
 
 
 public class Meeting{

@@ -1,10 +1,9 @@
-package com.problems.interviewcake.test.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q6_sub_array_sum;
 
-import com.problems.interviewcake.code.arrays.SubarraySum_Attempt;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static com.problems.interviewcake.code.arrays.SubarraySum_Attempt.subArraySum;
+import static com.problems.interviewcake.code.ch1_arrays.q6_sub_array_sum.SubarraySum_Attempt.subArraySum;
 
 
 public class SubarraySumTest {

@@ -5,38 +5,39 @@ import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
-import static com.problems.ctci.ch8_recursion_dp.q4_power_set.PowerSet.getSubsets;
+import static com.problems.ctci.ch8_recursion_dp.q4_power_set.PowerSetAttempt.getSubsets;
 
 public class PowerSetTest {
 
     @Test
     public void zeroToTwoSetTest() {
-        ArrayList<Integer> inputList = getInputList(0,3);//list from 0 - 2
+        List<Integer> inputList = getInputList(0,3);//list from 0 - 2
 
-        ArrayList<ArrayList<Integer>> actualSubsets = getSubsets(inputList, 0);
+        List<ArrayList<Integer>> actualSubsets = getSubsets(inputList);
 
-        ArrayList<ArrayList<Integer>> expectedSubsets = getExpectedSubsetsZeroToThree();
+        List<ArrayList<Integer>> expectedSubsets = getExpectedSubsetsZeroToTwo();
         Assertions.assertEquals(expectedSubsets, actualSubsets);
     }
 
     @Test
     public void oneToTwoSetTest() {
-        ArrayList<Integer> inputList = getInputList(1,3);//list from 1 - 2
+        List<Integer> inputList = getInputList(1,3);//list from 1 - 2
 
-        ArrayList<ArrayList<Integer>> actualSubsets = getSubsets(inputList, 0);
+        List<ArrayList<Integer>> actualSubsets = getSubsets(inputList);
 
-        ArrayList<ArrayList<Integer>> expectedSubsets = getExpectedSubsetsOneToTwo();
+        List<ArrayList<Integer>> expectedSubsets = getExpectedSubsetsOneToTwo();
         Assertions.assertEquals(expectedSubsets, actualSubsets);
     }
 
     @Test
     public void emptyInputListSetTest() {
-        ArrayList<Integer> inputList = getInputList(0,0);//empty input list
+        List<Integer> inputList = getInputList(0,0);//empty input list
 
-        ArrayList<ArrayList<Integer>> actualSubsets = getSubsets(inputList, 0);
+        List<ArrayList<Integer>> actualSubsets = getSubsets(inputList);
 
-        ArrayList<ArrayList<Integer>> expectedSubsets = new ArrayList<>();
+        List<ArrayList<Integer>> expectedSubsets = new ArrayList<>();
         expectedSubsets.add(new ArrayList<>());
 
         Assertions.assertEquals(expectedSubsets, actualSubsets);
@@ -64,7 +65,7 @@ public class PowerSetTest {
         return subsets;
     }
 
-    private ArrayList<ArrayList<Integer>> getExpectedSubsetsZeroToThree(){
+    private ArrayList<ArrayList<Integer>> getExpectedSubsetsZeroToTwo(){
         ArrayList<ArrayList<Integer>> subsets = new ArrayList<>();
 
         ArrayList<Integer> subset1 = new ArrayList<>();

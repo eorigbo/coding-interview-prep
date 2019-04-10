@@ -1,4 +1,4 @@
-package com.problems.interviewcake.code.arrays;
+package com.problems.interviewcake.code.ch1_arrays.q4_check_single_riffle_shuffle;
 
 public class CheckSingleRiffle {
 
