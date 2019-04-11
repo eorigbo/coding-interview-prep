@@ -37,7 +37,7 @@ Solutions to array questions can be found in the package **com.problems.intervie
 
 ----------------------------
 ### 2. Hash Tables
-Solutions to hash table questions can be found in the package **com.problems.interviewcake.code.hash_tables**. Test cases can be found in the package **com.problems.interviewcake.test.hash_tables**. Test cases share the same name as the solution files, with Test added at the end. Hash table questions in my repo include:
+Solutions to hash table questions can be found in the package **com.problems.interviewcake.code.ch2_hash_tables**. Test cases can be found in the package **com.problems.interviewcake.test.hash_tables**. Test cases share the same name as the solution files, with Test added at the end. Hash table questions in my repo include:
 
 **1\. Array Pair Equals Sum:** Write a function that determines if an array has a pair of elements whose sum equals a given number.
 
@@ -57,7 +57,7 @@ Solutions to hash table questions can be found in the package **com.problems.int
 
 ----------------------------
 ### 3. Greedy Algorithms
-Solutions to greedy algorithm questions can be found in the package **com.problems.interviewcake.code.greedy**. Test cases can be found in the package **com.problems.interviewcake.test.greedy**. Test cases share the same name as the solution files, with Test added at the end. Greedy algorithm questions in my repo include:
+Solutions to greedy algorithm questions can be found in the package **com.problems.interviewcake.code.ch3_greedy**. Test cases can be found in the package **com.problems.interviewcake.test.greedy**. Test cases share the same name as the solution files, with Test added at the end. Greedy algorithm questions in my repo include:
 
 **1\. Sell Stocks Once:** Write a function that determines the optimal buy and sell time for a given stock, given its prices yesterday.
 
@@ -77,7 +77,7 @@ Solutions to greedy algorithm questions can be found in the package **com.proble
 
 ----------------------------
 ### 4. Sorting and Searching
-Solutions to sorting and searching questions can be found in the package **com.problems.interviewcake.code.sorting_searching**. Test cases can be found in the package **com.problems.interviewcake.test.sorting_searching**. Test cases share the same name as the solution files, with Test added at the end. Searching and sorting algorithm questions in my repo include:
+Solutions to sorting and searching questions can be found in the package **com.problems.interviewcake.code.ch4_sorting_searching**. Test cases can be found in the package **com.problems.interviewcake.test.sorting_searching**. Test cases share the same name as the solution files, with Test added at the end. Searching and sorting algorithm questions in my repo include:
 
 **1\. Binary Search:** Implement binary search.
 
@@ -93,7 +93,7 @@ Solutions to sorting and searching questions can be found in the package **com.p
 
 ----------------------------
 ### 5. Trees and Graphs
-Solutions to trees and graphs questions can be found in the package **com.problems.interviewcake.code.trees_graphs**. Test cases can be found in the package **com.problems.interviewcake.test.trees_graphs**. Test cases share the same name as the solution files, with Test added at the end. Trees and graphs questions in my repo include:
+Solutions to trees and graphs questions can be found in the package **com.problems.interviewcake.code.ch5_trees_graphs**. Test cases can be found in the package **com.problems.interviewcake.test.trees_graphs**. Test cases share the same name as the solution files, with Test added at the end. Trees and graphs questions in my repo include:
 
 **1\. Super Balanced Binary Tree:** Write a function to check if a binary tree is 'super-balanced', meaning that the difference in depths between any two leaf nodes is no greater than one.
 
