@@ -1,5 +1,5 @@
 # Efesa's Coding Interview Prep
-This repository contains code I created as part of my journey to get better at interview questions related to algorithms and data structures.
+This repository contains code that I created as part of my journey to get better at interview questions related to algorithms and data structures.
 
 My plan is to update this read me doc with the topics I've covered, and questions under those topics. 
 
